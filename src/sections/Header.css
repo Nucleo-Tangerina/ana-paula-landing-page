@@ -1,0 +1,139 @@
+.header-sentinel {
+  position: absolute;
+  top: 0;
+  height: 8px;
+  width: 1px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(247 248 251 / 0);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--t-fast) var(--ease-snap),
+    border-color var(--t-fast) var(--ease-snap),
+    box-shadow var(--t-fast) var(--ease-snap);
+}
+
+.header.is-scrolled,
+.header.is-open {
+  background: rgb(247 248 251 / 0.96);
+  border-bottom-color: var(--hairline);
+  box-shadow: 0 6px 24px rgb(11 31 77 / 0.05);
+}
+
+.header__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  height: var(--header-h);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: var(--w-medium);
+  font-size: 1.125rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.wordmark--inverse {
+  color: var(--on-lacquer);
+}
+
+.header__nav {
+  margin-left: auto;
+}
+
+.header__nav ul {
+  display: flex;
+  gap: var(--s-6);
+}
+
+.header__nav a,
+.header__panel a {
+  color: var(--text);
+  font-size: var(--fs-small);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease-snap);
+}
+
+.header__nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.header__cta {
+  white-space: nowrap;
+  min-height: 44px;
+  padding-block: 0.625rem;
+}
+
+.header__toggle {
+  display: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  border: 0;
+  border-radius: var(--r-button);
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.header__panel {
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--s-2) var(--s-5);
+}
+
+.header__panel li + li {
+  border-top: 1px solid var(--hairline);
+}
+
+.header__panel a {
+  display: block;
+  padding-block: var(--s-4);
+  font-size: var(--fs-body);
+  color: var(--ink);
+}
+
+@media (min-width: 1000px) {
+  .header__panel {
+    display: none;
+  }
+}
+
+@media (max-width: 999px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__cta {
+    margin-left: auto;
+  }
+
+  .header__toggle {
+    display: grid;
+  }
+}
+
+@media (max-width: 420px) {
+  .header__bar {
+    gap: var(--s-3);
+  }
+
+  .header__cta {
+    padding-inline: 0.875rem 0.625rem;
+    font-size: var(--fs-label);
+  }
+
+  .wordmark {
+    font-size: 1rem;
+  }
+}

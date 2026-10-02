@@ -1,0 +1,66 @@
+import { Lock, ShieldCheck, CreditCard } from 'lucide-react'
+import { hero, facts, trust } from '../content'
+import { Button, Placeholder } from '../components/ui'
+import { Thread } from '../components/Thread'
+import './Hero.css'
+
+const TRUST_ICONS = [Lock, ShieldCheck, CreditCard]
+
+export function Hero() {
+  const [before, emphasis, after] = hero.headline
+  return (
+    <section id="top" className="hero" aria-labelledby="hero-title">
+      <div className="hero__thread">
+        <Thread variant="hero" className="hero__thread-desk" />
+        <Thread variant="hero-m" className="hero__thread-mob" />
+      </div>
+
+      <div className="rail hero__grid">
+        <div className="hero__copy">
+          <h1 id="hero-title" className="hero__title">
+            {before}
+            <span className="hero__em">{emphasis}</span>
+            {after}
+          </h1>
+          <p className="hero__deck">{hero.deck}</p>
+          <div className="hero__actions">
+            <Button cta="hero">{hero.cta}</Button>
+            <Button variant="secondary" href="#conteudo">
+              {hero.secondary}
+            </Button>
+          </div>
+          <ul role="list" className="hero__trust">
+            {trust.map((t, i) => {
+              const Icon = TRUST_ICONS[i]
+              return (
+                <li key={t}>
+                  <Icon size={16} strokeWidth={1.5} aria-hidden />
+                  {t}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+
+        <figure className="hero__portrait">
+          <Placeholder label="Foto da Ana Paula Jorge: retrato recortado (PNG sem fundo), olhando para a câmera" ratio="4 / 5" />
+          <figcaption className="hero__caption">
+            <strong>{hero.portraitCaption.name}</strong>
+            <span>{hero.portraitCaption.role}</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div className="rail">
+        <ul role="list" className="facts" aria-label="A formação em números">
+          {facts.map((f) => (
+            <li key={f.value} className="facts__item">
+              <span className="facts__value">{f.value}</span>
+              <span className="facts__detail">{f.detail}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}

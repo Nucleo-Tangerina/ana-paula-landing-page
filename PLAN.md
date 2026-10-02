@@ -19,6 +19,8 @@ Dependências previstas: `react`, `react-dom`, `vite`, `typescript`, `lucide-rea
 
 Entregável: o direction contract aprovado por você.
 
+> ✅ **Concluída.** Direção escolhida: **Prospecto Institucional** (`civic-bureau-prospectus-late-modern`), seed `925b38e5`, caminho code-led. O direction contract está em `.impeccable/surfaces/src-app-tsx.md`. As referências de qualidade estão em `.impeccable/ref/`.
+
 ## Fase 1: Scaffold
 
 1. `npm create vite@latest . -- --template react-ts`. Limpar o boilerplate.
@@ -40,6 +42,8 @@ Entregável: o direction contract aprovado por você.
 3. `.env.example` com `VITE_CHECKOUT_URL`, `VITE_META_PIXEL_ID`, `VITE_GTM_ID`.
 4. `.gitignore` com node_modules, dist, .env.
 
+> ✅ **Fase 1 concluída.** Fonte Lexend Variable (pesos 400/500), tokens em `src/styles/tokens.css`, contraste AA verificado.
+
 ## Fase 2: Camada de conteúdo
 
 1. `content.ts` transcreve os 23 blocos do PDF literalmente (acentuação revisada).
@@ -52,6 +56,8 @@ Entregável: o direction contract aprovado por você.
    - credencial UENF: fora até ser confirmada.
 3. Em modo dev, um selo visual "[CONFIRMAR]" aparece nos itens não confirmados. Em produção, eles somem ou ficam ocultos.
 4. Preço, parcelamento, vagas e carga horária ficam definidos uma única vez e são reutilizados nos blocos 02, 03, 18 e 22.
+
+> ✅ **Fase 2 concluída.** `src/content.ts` reúne os 23 blocos. Eyebrows foram integrados aos títulos e ledes (opção a). Itens marcados `pending` aparecem só em dev.
 
 ## Fase 3: Primitivos
 
@@ -125,12 +131,23 @@ Assets faltando (logo, fotos, prints, depoimentos) usam `Placeholder` com a prop
 - Fontes com `font-display: swap` e preload da principal.
 - Meta: Lighthouse mobile ≥ 90 em Performance, Accessibility, Best Practices e SEO.
 
+> ✅ **Fases 3–7 concluídas.** Primitivos em `src/components/`, os 23 blocos em `src/sections/` (Journey, Proof, Close), fio-assinatura em canvas (`Thread.tsx`), reveal único (`useReveal.ts`), tracking via `src/track.ts` (GTM + Meta Pixel, só carrega com ID no `.env`), SEO/OG/JSON-LD em `index.html`. Testado em 1440 e 390px sem scroll horizontal; detector impeccable limpo.
+> Notas: carrossel de depoimentos em scroll-snap (setas só se houver mais de 3); links do menu para seções ocultas somem em produção; `canonical` removido até existir domínio (`VITE_SITE_URL`).
+
 ## Fase 8: Revisão e finalização (impeccable)
 
 1. Rodar `impeccable detect --json src` e corrigir o que for mecânico.
 2. Capturar `desktop.png` (1440) e `mobile.png` (390) em `.impeccable/review/`.
 3. Fazer a revisão final contra o direction contract (finish reviewer), em no máximo 2 rodadas de correção.
 4. Gerar o `DESIGN.md` a partir do build (documenter).
+
+> ✅ **Fase 8 concluída.** A revisão final terminou com **ship**, depois de 6 rodadas de correção:
+> - o fio da teia virou uma faixa de seda que afina até virar o fio da página e se transforma na ponte da Big Idea;
+> - o magenta ficou só na ação;
+> - o selo de garantia foi gravado em SVG;
+> - o ritmo entre as seções foi revisto.
+>
+> O `DESIGN.md` foi gerado a partir do build. Ficou um detalhe cosmético conhecido: uma marquinha de ~10px numa dobra do fio no desktop.
 
 ## Fase 9: Checklist antes de publicar (conteúdo, com você)
 
