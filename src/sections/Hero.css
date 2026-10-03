@@ -83,18 +83,23 @@
 .hero__portrait {
   position: relative;
   justify-self: center;
-  width: min(100%, 26rem);
+  width: min(100%, 31rem);
   margin: 0;
 }
 
-/* A photographed portrait, framed as a panel: the thread passes behind it. */
+/* A cut-out portrait standing in the light, no frame: the thread passes behind her
+   and the table edge rests on the facts row. */
 .hero__portrait img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: var(--r-panel);
-  box-shadow: 0 30px 60px -30px rgb(11 31 77 / 0.4);
+  filter: drop-shadow(0 24px 40px rgb(11 31 77 / 0.14));
+  /* the table is cropped square at both sides: fade its ends, leave the figure whole */
+  -webkit-mask:
+    linear-gradient(#000, #000) top / 100% 69% no-repeat,
+    linear-gradient(90deg, transparent, #000 16%, #000 93%, transparent) bottom / 100% 31% no-repeat;
+  mask:
+    linear-gradient(#000, #000) top / 100% 69% no-repeat,
+    linear-gradient(90deg, transparent, #000 16%, #000 93%, transparent) bottom / 100% 31% no-repeat;
 }
 
 .hero__caption {

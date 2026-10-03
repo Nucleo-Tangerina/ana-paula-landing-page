@@ -46,9 +46,9 @@ export function Hero() {
         <figure className="hero__portrait">
           <img
             src={retrato}
-            alt="Ana Paula Jorge sorrindo, de blazer magenta, sentada à mesa em uma sala"
+            alt="Ana Paula Jorge sorrindo, de blazer magenta, com os braços apoiados em uma mesa de madeira"
             width={880}
-            height={1100}
+            height={964}
             fetchPriority="high"
             decoding="async"
           />

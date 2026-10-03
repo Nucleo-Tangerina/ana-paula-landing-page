@@ -15,7 +15,7 @@ export function Author() {
           src={autora}
           alt={author.portraitAlt}
           width={880}
-          height={1100}
+          height={1208}
           loading="lazy"
           decoding="async"
         />

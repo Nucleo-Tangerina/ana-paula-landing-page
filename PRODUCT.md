@@ -58,8 +58,8 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 - Copy: `PAG - ANA PAULA.pdf`.
 - Credenciais da Ana Paula (segundo a apresentação existente): Mestre e Doutoranda; Professora da Rede Municipal; atua na Coordenação Municipal de Educação Especial; experiência no Ensino Superior; pesquisadora e palestrante; autora/organizadora de obras na área. O detalhe "Pedagoga… Cognição e Linguagem pela UENF" aparece só no mockup e **ainda precisa ser confirmado**.
-- **Fotos:** dois retratos reais da Ana Paula.
-  - Originais em `assets-src/`.
+- **Fotos:** dois retratos reais da Ana Paula, recortados (fundo transparente).
+  - Originais e recortes em `assets-src/`.
   - Versões otimizadas: a de blazer magenta em `src/assets/ana-hero.webp`, no hero; o retrato com fundo de tijolos em `src/assets/ana-autora.webp`, no bloco de autoridade.
   - `public/og.jpg` é um recorte da foto do blazer.
 - **Não há e não haverá:** logo (a marca aparece como texto "Teia de Saberes"), prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
