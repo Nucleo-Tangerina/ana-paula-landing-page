@@ -1,0 +1,96 @@
+.pain__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--s-4) clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: end;
+}
+
+.pain__heading {
+  max-width: 22ch;
+}
+
+.pain__lede {
+  margin-top: 0;
+}
+
+/* The four doubts run across the whole rail, one ruled row. */
+.pain__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: var(--s-8);
+  border-top: 1px solid var(--ink);
+}
+
+.pain__item {
+  padding: var(--s-5) var(--s-5) var(--s-6) 0;
+}
+
+.pain__item + .pain__item {
+  padding-left: var(--s-5);
+  border-left: 1px solid var(--hairline);
+}
+
+.pain__question {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+}
+
+.pain__voice {
+  margin-top: var(--s-3);
+  font-size: var(--fs-small);
+  max-width: 34ch;
+}
+
+.pain__closing {
+  margin-top: var(--s-7);
+  padding-top: var(--s-6);
+  border-top: 1px solid var(--hairline);
+  color: var(--text);
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: var(--track-heading);
+  max-width: 40ch;
+  text-wrap: balance;
+}
+
+.pain__closing strong {
+  color: var(--ink);
+  font-weight: var(--w-medium);
+}
+
+@media (max-width: 999px) {
+  .pain__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pain__item,
+  .pain__item + .pain__item {
+    padding: var(--s-5) var(--s-5) var(--s-5) 0;
+    border-left: 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .pain__item:nth-child(even) {
+    padding-left: var(--s-5);
+    padding-right: 0;
+    border-left: 1px solid var(--hairline);
+  }
+}
+
+@media (max-width: 899px) {
+  .pain__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pain__list {
+    grid-template-columns: 1fr;
+  }
+
+  .pain__item,
+  .pain__item:nth-child(even) {
+    padding-inline: 0;
+    border-left: 0;
+  }
+}

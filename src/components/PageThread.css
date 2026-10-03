@@ -1,0 +1,37 @@
+.page-thread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.page-thread__line {
+  fill: none;
+  stroke: url(#pt-ink);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.8;
+}
+
+/* The knot where the thread ties into the closing CTA appears once it arrives. */
+.page-thread__knot {
+  fill: #ec008c;
+  opacity: 0;
+  transition: opacity var(--t-fast) var(--ease-snap);
+}
+
+.page-thread.is-whole .page-thread__knot {
+  opacity: 1;
+}
+
+/* Phones: the margin is narrow, so the thread carries more weight, not less. */
+@media (max-width: 760px) {
+  .page-thread__line {
+    stroke-width: 2.25;
+    opacity: 0.95;
+  }
+}

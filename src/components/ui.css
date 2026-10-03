@@ -1,0 +1,116 @@
+/* ---------- Button ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: 52px;
+  padding: 0.875rem 1.25rem 0.875rem 1.5rem;
+  border-radius: var(--r-button);
+  border: 1px solid transparent;
+  font-size: var(--fs-small);
+  font-weight: var(--w-medium);
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    background-color var(--t-fast) var(--ease-snap),
+    border-color var(--t-fast) var(--ease-snap),
+    color var(--t-fast) var(--ease-snap),
+    box-shadow var(--t-fast) var(--ease-snap);
+}
+
+.btn__chevron {
+  flex: none;
+  transition: transform var(--t-fast) var(--ease-snap);
+}
+
+.btn:hover .btn__chevron {
+  transform: translateX(3px);
+}
+
+.btn--primary {
+  background: var(--action);
+  color: #fff;
+  box-shadow: 0 1px 2px rgb(184 0 109 / 0.2), 0 8px 20px rgb(214 0 127 / 0.18);
+}
+
+.btn--primary:hover {
+  background: var(--action-hover);
+}
+
+.btn--secondary {
+  background: var(--paper);
+  color: var(--action);
+  border-color: var(--action);
+}
+
+.btn--secondary:hover {
+  background: var(--action-tint);
+}
+
+.btn--inverse {
+  background: transparent;
+  color: var(--on-lacquer);
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.btn--inverse:hover {
+  border-color: #fff;
+  background: rgb(255 255 255 / 0.06);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Bands: the page is one rail split by hairlines ---------- */
+
+.band {
+  padding-block: var(--section-y);
+}
+
+.band--ground {
+  background: var(--ground);
+}
+
+.band--paper {
+  background: var(--paper);
+}
+
+.band--ground + .band--ground,
+.band--paper + .band--paper {
+  border-top: 1px solid var(--hairline);
+}
+
+/* Lacquer: a soft gloss along the top edge, like light across a dark finish. */
+.band--lacquer {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0) 22%),
+    radial-gradient(70% 50% at 80% 0%, rgb(39 170 225 / 0.12), transparent 70%),
+    var(--lacquer);
+  color: var(--on-lacquer-muted);
+}
+
+.band--lacquer :is(h1, h2, h3, h4) {
+  color: var(--on-lacquer);
+}
+
+.band--lacquer ::selection {
+  background: var(--thread-magenta);
+  color: #fff;
+}
+
+/* Shared section heading rhythm: more space above a heading than below. */
+.heading {
+  font-size: var(--fs-h2);
+  max-width: 22ch;
+}
+
+.lede {
+  margin-top: var(--s-4);
+  font-size: var(--fs-deck);
+  max-width: var(--measure);
+}

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-02T00:00:00Z",
+  "title": "Design System: Caminhos da Inclusão",
+  "extensions": {
+    "colorMeta": {
+      "action": { "role": "primary", "displayName": "Action Magenta", "canonical": "#d6007f", "tonalRamp": ["#3d0024", "#5e0038", "#85004f", "#b8006d", "#d6007f", "#f0479f", "#f8a3cd", "#fdeaf4"] },
+      "action-hover": { "role": "primary", "displayName": "Deep Action Magenta", "canonical": "#b8006d" },
+      "action-tint": { "role": "primary", "displayName": "Action Tint", "canonical": "#fdeaf4" },
+      "thread-cyan": { "role": "secondary", "displayName": "Thread Cyan", "canonical": "#27aae1", "tonalRamp": ["#08283a", "#0d3f5b", "#145d85", "#1c80b0", "#27aae1", "#62c3eb", "#a6ddf4", "#e3f4fc"] },
+      "thread-purple": { "role": "secondary", "displayName": "Thread Purple", "canonical": "#92278f", "tonalRamp": ["#2a0a29", "#43103f", "#63185f", "#92278f", "#ad4aaa", "#c77fc5", "#e0b6df", "#f5e8f5"] },
+      "thread-magenta": { "role": "secondary", "displayName": "Thread Magenta (brand)", "canonical": "#ec008c", "tonalRamp": ["#420027", "#66003c", "#8f0055", "#bd0070", "#ec008c", "#f54ba9", "#faa3d1", "#fde6f2"] },
+      "ink": { "role": "neutral", "displayName": "Ink Navy", "canonical": "#0b1f4d", "tonalRamp": ["#040b1c", "#071538", "#0b1f4d", "#1d3570", "#3d5592", "#7385b6", "#b9c3de", "#e8ecf5"] },
+      "lacquer-deep": { "role": "neutral", "displayName": "Deep Lacquer", "canonical": "#071538" },
+      "on-lacquer-muted": { "role": "neutral", "displayName": "Lacquer Mist", "canonical": "#b9c3de" },
+      "text": { "role": "neutral", "displayName": "Slate Text", "canonical": "#4b5168" },
+      "text-muted": { "role": "neutral", "displayName": "Muted Slate", "canonical": "#646a82" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#e4e7ef" },
+      "ground": { "role": "neutral", "displayName": "Bone Ground", "canonical": "#f7f8fb" },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; emphasis phrase at 500 in action magenta." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, max 22ch, no eyebrow above." },
+      "title": { "displayName": "Title", "purpose": "Row titles: pillars, modules, benefits, pain questions." },
+      "deck": { "displayName": "Deck", "purpose": "Ledes and list rows." },
+      "body": { "displayName": "Body", "purpose": "Running copy, 65ch measure." },
+      "small": { "displayName": "Small", "purpose": "Buttons, facts, nav anchors." },
+      "label": { "displayName": "Label", "purpose": "Details, trust lines, item index labels; sentence case." }
+    },
+    "shadows": [
+      { "name": "rest", "value": "0 1px 2px rgb(11 31 77 / 0.06), 0 4px 12px rgb(11 31 77 / 0.05)", "purpose": "Panels sitting on the page." },
+      { "name": "lifted", "value": "0 2px 4px rgb(11 31 77 / 0.06), 0 16px 40px rgb(11 31 77 / 0.1)", "purpose": "Floating objects: hero caption card, phone frame." },
+      { "name": "action-glow", "value": "0 1px 2px rgb(184 0 109 / 0.2), 0 8px 20px rgb(214 0 127 / 0.18)", "purpose": "Primary button only." },
+      { "name": "lacquer-gloss", "value": "linear-gradient(180deg, rgb(255 255 255 / 0.07), rgb(255 255 255 / 0) 22%), radial-gradient(70% 50% at 80% 0%, rgb(39 170 225 / 0.12), transparent 70%), #0b1f4d", "purpose": "Background of lacquer bands (Big Idea, Offer)." }
+    ],
+    "motion": [
+      { "name": "ease-rise", "value": "cubic-bezier(0.165, 0.84, 0.44, 1)", "purpose": "Panel reveal: 24px rise over 0.8s, once." },
+      { "name": "ease-snap", "value": "cubic-bezier(0.25, 1, 0.5, 1)", "purpose": "State transitions and hero ribbon pointer bend, 0.3s." },
+      { "name": "t-rise", "value": "0.8s", "purpose": "Reveal duration." },
+      { "name": "t-fast", "value": "0.3s", "purpose": "Hover, disclosure, header, ribbon bend." },
+      { "name": "thread-draw", "value": "scroll-linked stroke-dashoffset", "purpose": "Page thread and Big Idea bridge draw on with scroll; whole and static under reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "nav", "value": "1000px" },
+      { "name": "stack", "value": "900px" },
+      { "name": "thread-phone", "value": "760px" },
+      { "name": "rows", "value": "640px" },
+      { "name": "narrow", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action: every checkout CTA.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\"><span>Quero garantir minha vaga</span><svg class=\"ds-chev\" width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 14px 20px 14px 24px; border-radius: 8px; border: 1px solid transparent; font-family: 'Lexend Variable', system-ui, sans-serif; font-size: 15px; font-weight: 500; line-height: 1.25; text-decoration: none; transition: background-color .3s cubic-bezier(.25,1,.5,1), border-color .3s cubic-bezier(.25,1,.5,1); } .ds-chev { transition: transform .3s cubic-bezier(.25,1,.5,1); } .ds-btn:hover .ds-chev { transform: translateX(3px); } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { outline: 2px solid #d6007f; outline-offset: 3px; } .ds-btn-primary { background: #d6007f; color: #fff; box-shadow: 0 1px 2px rgb(184 0 109 / .2), 0 8px 20px rgb(214 0 127 / .18); } .ds-btn-primary:hover { background: #b8006d; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outline companion to the primary, e.g. 'Ver conteúdo'.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\"><span>Ver conteúdo</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 14px 20px 14px 24px; border-radius: 8px; border: 1px solid #d6007f; background: #fff; color: #d6007f; font-family: 'Lexend Variable', system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color .3s cubic-bezier(.25,1,.5,1); } .ds-btn-secondary:hover { background: #fdeaf4; } .ds-btn-secondary:focus-visible { outline: 2px solid #d6007f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Inverse Button",
+      "kind": "button",
+      "refersTo": "button-inverse",
+      "description": "Outline button on lacquer navy bands.",
+      "html": "<div style=\"background:#0b1f4d;padding:24px\"><a class=\"ds-btn-inverse\" href=\"#\"><span>Ver o conteúdo</span><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></a></div>",
+      "css": ".ds-btn-inverse { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 14px 20px 14px 24px; border-radius: 8px; border: 1px solid rgb(255 255 255 / .4); background: transparent; color: #fff; font-family: 'Lexend Variable', system-ui, sans-serif; font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .3s cubic-bezier(.25,1,.5,1), background-color .3s cubic-bezier(.25,1,.5,1); } .ds-btn-inverse:hover { border-color: #fff; background: rgb(255 255 255 / .06); }"
+    },
+    {
+      "name": "Ruled Rows",
+      "kind": "custom",
+      "description": "Core list primitive: ink rule to open, hairline between rows, no tiles.",
+      "html": "<ul class=\"ds-rows\"><li><strong>Fundamentos</strong><span>Entender a inclusão e a legislação.</span></li><li><strong>Comunicação</strong><span>Mediar com clareza.</span></li><li><strong>Adaptação</strong><span>Ajustar a prática ao aluno.</span></li></ul>",
+      "css": ".ds-rows { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #0b1f4d; font-family: 'Lexend Variable', system-ui, sans-serif; } .ds-rows li { padding: 24px 24px 24px 0; color: #4b5168; font-size: 15px; } .ds-rows li + li { padding-left: 24px; border-left: 1px solid #e4e7ef; } .ds-rows strong { display: block; color: #0b1f4d; font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 12px; }"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Paper panel at 12px with hairline and rest shadow.",
+      "html": "<div class=\"ds-panel\"><h3>Construa também seu portfólio profissional.</h3><p>Durante a formação, você reúne evidências da sua prática.</p></div>",
+      "css": ".ds-panel { padding: 40px; border-radius: 12px; background: #fff; border: 1px solid #e4e7ef; box-shadow: 0 1px 2px rgb(11 31 77 / .06), 0 4px 12px rgb(11 31 77 / .05); font-family: 'Lexend Variable', system-ui, sans-serif; color: #4b5168; } .ds-panel h3 { margin: 0 0 12px; color: #0b1f4d; font-weight: 500; font-size: 28px; letter-spacing: -0.035em; line-height: 1.15; } .ds-panel p { margin: 0; font-size: 17px; line-height: 1.6; }"
+    },
+    {
+      "name": "Disclosure Row",
+      "kind": "custom",
+      "description": "Module / FAQ row: native details, plus icon rotates 45deg.",
+      "html": "<details class=\"ds-qa\"><summary><span>Preciso ter experiência na área?</span><svg class=\"ds-plus\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M12 5v14\"/></svg></summary><p>Não. A formação parte dos fundamentos.</p></details>",
+      "css": ".ds-qa { border-top: 1px solid #0b1f4d; border-bottom: 1px solid #e4e7ef; font-family: 'Lexend Variable', system-ui, sans-serif; } .ds-qa summary { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 24px 0; color: #0b1f4d; font-size: 19px; font-weight: 500; line-height: 1.35; cursor: pointer; list-style: none; } .ds-qa summary::-webkit-details-marker { display: none; } .ds-qa summary:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; } .ds-plus { flex: none; transition: transform .3s cubic-bezier(.25,1,.5,1); } .ds-qa[open] .ds-plus { transform: rotate(45deg); } .ds-qa p { margin: 0; padding-bottom: 24px; color: #4b5168; max-width: 60ch; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "description": "Sticky 72px bone bar: wordmark, slate anchors, filled CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\">Teia de Saberes</a><ul><li><a href=\"#\">Sobre o curso</a></li><li><a href=\"#\">Conteúdo</a></li><li><a href=\"#\">FAQ</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Quero minha vaga</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 32px; height: 72px; padding: 0 24px; background: rgb(247 248 251 / .96); border-bottom: 1px solid #e4e7ef; box-shadow: 0 6px 24px rgb(11 31 77 / .05); font-family: 'Lexend Variable', system-ui, sans-serif; } .ds-mark { color: #0b1f4d; font-weight: 500; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; } .ds-nav ul { display: flex; gap: 32px; margin: 0 0 0 auto; padding: 0; list-style: none; } .ds-nav ul a { color: #4b5168; font-size: 15px; text-decoration: none; transition: color .3s cubic-bezier(.25,1,.5,1); } .ds-nav ul a:hover { color: #0b1f4d; text-decoration: underline; } .ds-nav-cta { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 8px; background: #d6007f; color: #fff; font-size: 15px; font-weight: 500; text-decoration: none; } .ds-nav-cta:hover { background: #b8006d; }"
+    },
+    {
+      "name": "Lacquer Band",
+      "kind": "custom",
+      "refersTo": "band-lacquer",
+      "description": "Navy object in the light with top-edge gloss; thread runs across it.",
+      "html": "<section class=\"ds-lacquer\"><h2>Saber como agir na inclusão.</h2><p>É nessa ponte entre conhecimento e atuação que nasce o Caminhos da Inclusão.</p><div class=\"ds-thread\"></div></section>",
+      "css": ".ds-lacquer { padding: 64px 40px; background: linear-gradient(180deg, rgb(255 255 255 / .07), rgb(255 255 255 / 0) 22%), radial-gradient(70% 50% at 80% 0%, rgb(39 170 225 / .12), transparent 70%), #0b1f4d; color: #b9c3de; font-family: 'Lexend Variable', system-ui, sans-serif; } .ds-lacquer h2 { margin: 0; color: #fff; font-weight: 500; font-size: 40px; letter-spacing: -0.035em; line-height: 1.08; } .ds-lacquer p { margin: 16px 0 0; font-size: 19px; } .ds-thread { margin-top: 32px; height: 2px; border-radius: 2px; background: linear-gradient(115deg, #27aae1, #92278f 55%, #ec008c); }"
+    },
+    {
+      "name": "Engraved Seal",
+      "kind": "custom",
+      "description": "Ink line medallion for guarantees and credentials.",
+      "html": "<svg class=\"ds-seal\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"30 dias\"><g fill=\"none\" stroke=\"currentColor\"><circle cx=\"100\" cy=\"100\" r=\"97\" stroke-width=\"1.25\"/><circle cx=\"100\" cy=\"100\" r=\"93\" stroke-width=\"0.5\"/><circle cx=\"100\" cy=\"100\" r=\"66\" stroke-width=\"1\"/><circle cx=\"100\" cy=\"100\" r=\"61\" stroke-width=\"0.5\"/><circle cx=\"100\" cy=\"100\" r=\"56\" stroke-width=\"0.35\" stroke-dasharray=\"1 2.2\"/></g><text x=\"100\" y=\"108\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"46\" font-weight=\"500\" letter-spacing=\"-1.5\">30</text><text x=\"100\" y=\"128\" text-anchor=\"middle\" fill=\"currentColor\" font-size=\"10\" letter-spacing=\"3\" font-weight=\"500\">DIAS</text></svg>",
+      "css": ".ds-seal { width: 160px; height: auto; color: #0b1f4d; font-family: 'Lexend Variable', system-ui, sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Civic Prospectus, Sewn by One Thread",
+    "overview": "The page reads like a public prospectus for a formation, not a pink course funnel. Almost everything stands in bone-white light (ground and paper) on a ruled 1180px rail. Navy ink carries the type, and 1px hairlines divide the content. The colour is concentrated in two places. One continuous Teia thread runs the full cyan-purple-magenta gradient from the hero to the closing question. The other is a single deeper magenta reserved for action.\n\nThree navy masses (the Big Idea, the Offer, and the Footer) work as lacquered objects: dark masses standing alone in the light. The thread fades out at their edges. In the Big Idea it becomes the bridge from \"Saber sobre\" to \"Saber como agir\", which runs right to left. The density is generous and civic. Rows and ruled lists replace tiles and icon cards. Credentials and promises are drawn as engraved line work, never as institution logos.\n\nThe system rejects the category default: pink course pages, icon-card grids, badges, floating stickers, and eyebrow labels over headings.",
+    "keyCharacteristics": [
+      "Bone-white ground with navy ink. There is never pure black.",
+      "One gradient thread that changes route but never breaks its single-line identity.",
+      "One magenta action colour, used for CTAs and the hero emphasis only.",
+      "A 1180px rail divided by 1px rules. Content is set as rows, not tiles.",
+      "One typeface (Lexend) in two weights (400 and 500), with no italics and no serif.",
+      "Lacquer navy bands as the only dark mass."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Magenta fills only the action. If it isn't a CTA or the hero emphasis, it isn't action magenta.", "section": "colors" },
+      { "name": "The Thread Holds the Colour Rule", "body": "The full Teia gradient is spent only on the thread and its echoes (the method line, the closing underline). Never gradient-fill a button, panel, or heading.", "section": "colors" },
+      { "name": "The Never-Black Rule", "body": "Ink is navy. Shadows are tinted with ink, not black.", "section": "colors" },
+      { "name": "The Two Weights Rule", "body": "Use only 400 and 500. Use no italics and no other face. Emphasis is weight 500 plus ink, or action magenta in the hero.", "section": "typography" },
+      { "name": "The No Eyebrows Rule", "body": "A heading stands alone. No kicker or eyebrow label sits above a section heading. Index labels belong to the item they number, never to the section.", "section": "typography" },
+      { "name": "The Lacquer Rule", "body": "Navy bands are the dark objects in the light. The lacquer bands (the Big Idea and the Offer) carry a top-edge gloss: a white fade from 7% to 0 over the top 22%, plus a faint cyan radial at the upper right. The footer closes the page as flat deep lacquer. Don't add further dark bands casually.", "section": "elevation" },
+      { "name": "The Soft Offset Rule", "body": "Shadows are offset downward and blurred, tinted with ink. There are no hard offset shadows and no black glows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the page bone-white and spend colour on the thread and the single magenta action.",
+      "Do set lists as ruled rows on the rail: a 1px ink rule to open, then hairlines between rows.",
+      "Do use action magenta for white-text buttons. Brand magenta (thread-magenta) belongs to the thread.",
+      "Do tint every shadow with ink navy and offset it downward.",
+      "Do draw credentials and guarantees as engraved line medallions.",
+      "Do disable the rise, the pointer bend, and the scroll draw-on under reduced motion."
+    ],
+    "donts": [
+      "Don't set white text on brand magenta. It measures 4.25:1 and fails AA.",
+      "Don't put eyebrow or kicker labels above headings.",
+      "Don't build icon-card grids, badges, floating stickers, or tiled feature boxes.",
+      "Don't use a third font weight, italics, a serif, or a system display face.",
+      "Don't use pure black for text or shadows.",
+      "Don't gradient-fill surfaces or buttons. The gradient is a line.",
+      "Don't use institution logos as proof."
+    ]
+  }
+}

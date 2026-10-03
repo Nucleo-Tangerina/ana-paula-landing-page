@@ -1,0 +1,120 @@
+.idea {
+  position: relative;
+  overflow: clip;
+}
+
+.idea__lede {
+  font-size: var(--fs-deck);
+  font-weight: var(--w-regular);
+  letter-spacing: 0;
+  color: var(--on-lacquer-muted) !important;
+}
+
+.idea__span {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(4rem, 0.4fr) minmax(0, 1fr);
+  align-items: center;
+  margin-top: var(--s-6);
+  padding-block: clamp(5rem, 3rem + 6vw, 9rem);
+  border-top: 1px solid var(--lacquer-hairline);
+  border-bottom: 1px solid var(--lacquer-hairline);
+}
+
+/* The bridge bleeds to the panel's edges; its route stays in the band's padding. */
+.idea__thread {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+}
+
+.idea__cross {
+  display: none;
+}
+
+.idea__side {
+  position: relative;
+}
+
+.idea__side--act {
+  grid-column: 3;
+  text-align: right;
+  justify-self: end;
+}
+
+.idea__title {
+  color: var(--on-lacquer);
+  font-size: clamp(1.75rem, 1.1rem + 2.6vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: var(--track-display);
+  text-wrap: balance;
+}
+
+.idea__side:not(.idea__side--act) .idea__title {
+  font-weight: var(--w-regular);
+  color: rgb(255 255 255 / 0.78);
+}
+
+.idea__side--act .idea__title {
+  font-weight: var(--w-medium);
+}
+
+.idea__text {
+  margin-top: var(--s-4);
+  max-width: 30ch;
+  font-size: var(--fs-body);
+}
+
+.idea__side--act .idea__text {
+  margin-left: auto;
+}
+
+.idea__closing {
+  margin-top: var(--s-7);
+  max-width: 34ch;
+  margin-inline: auto;
+  text-align: center;
+  color: var(--on-lacquer);
+  font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.3;
+  letter-spacing: var(--track-heading);
+  text-wrap: balance;
+}
+
+.idea__closing strong {
+  font-weight: var(--w-medium);
+  background: linear-gradient(90deg, var(--thread-cyan), var(--thread-purple), var(--thread-magenta)) no-repeat 0 100% / 100% 2px;
+  padding-bottom: 2px;
+}
+
+/* Phone: the statements stack, and the thread crosses the gap between them. */
+@media (max-width: 759px) {
+  .idea__span {
+    grid-template-columns: 1fr;
+    padding-block: var(--s-7);
+  }
+
+  .idea__thread {
+    display: none;
+  }
+
+  .idea__cross {
+    display: block;
+    height: 9rem;
+    margin-inline: calc(-1 * var(--gutter));
+  }
+
+  .idea__side--act {
+    grid-column: auto;
+    text-align: left;
+    justify-self: start;
+  }
+
+  .idea__side--act .idea__text {
+    margin-left: 0;
+  }
+
+  .idea__closing {
+    text-align: left;
+    margin-inline: 0;
+  }
+}

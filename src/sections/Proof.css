@@ -1,0 +1,236 @@
+/* ---------- 11–12 Ana Paula ---------- */
+
+.author__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: center;
+}
+
+/* Cut-out portrait, unframed like the hero. */
+.author__portrait {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgb(11 31 77 / 0.14));
+  /* the photo is cut at the waist: let it dissolve rather than end on a hard line */
+  -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent);
+  mask-image: linear-gradient(180deg, #000 82%, transparent);
+}
+
+.author__name {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--track-display);
+}
+
+.author__sub {
+  margin-top: var(--s-3);
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  line-height: 1.35;
+  max-width: 30ch;
+}
+
+.author__bio {
+  margin-top: var(--s-5);
+  max-width: var(--measure);
+}
+
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 var(--s-6);
+  margin-top: var(--s-6);
+}
+
+.credentials li {
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: var(--fs-small);
+  line-height: 1.35;
+}
+
+.author__quote {
+  margin: var(--s-8) 0 0;
+  padding: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+  border-radius: var(--r-panel);
+  background: var(--ground);
+  border: 1px solid var(--hairline);
+}
+
+.author__quote blockquote p {
+  color: var(--ink);
+  font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
+  line-height: 1.25;
+  letter-spacing: var(--track-heading);
+  max-width: 34ch;
+  text-wrap: balance;
+}
+
+.author__quote figcaption {
+  margin-top: var(--s-5);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+.author__quote figcaption::before {
+  content: '— ';
+}
+
+/* ---------- 14 Experiência de estudo ---------- */
+
+.study__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(2rem, 1rem + 5vw, 6rem);
+  align-items: start;
+}
+
+.study__list li {
+  display: flex;
+  gap: var(--s-4);
+  padding-block: var(--s-4);
+  border-top: 1px solid var(--hairline);
+}
+
+.study__list svg {
+  flex: none;
+  color: var(--thread-purple);
+  margin-top: 2px;
+}
+
+.study__list strong {
+  display: block;
+  color: var(--ink);
+  font-weight: var(--w-medium);
+}
+
+.study__list span {
+  font-size: var(--fs-small);
+}
+
+/* ---------- 15 Conteúdo programático ---------- */
+
+.curriculum__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: start;
+}
+
+.curriculum__intro {
+  position: sticky;
+  top: calc(var(--header-h) + var(--s-6));
+}
+
+.modules {
+  border-top: 1px solid var(--ink);
+}
+
+.modules__item {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.modules__item summary {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-areas:
+    'n n icon'
+    'title hours icon';
+  align-items: center;
+  gap: var(--s-1) var(--s-5);
+  padding-block: var(--s-5);
+  cursor: pointer;
+  list-style: none;
+}
+
+.modules__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.modules__n {
+  grid-area: n;
+  font-size: var(--fs-label);
+  color: var(--text-muted);
+}
+
+.modules__title {
+  grid-area: title;
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  font-weight: var(--w-medium);
+  line-height: 1.25;
+  letter-spacing: var(--track-heading);
+}
+
+.modules__hours {
+  grid-area: hours;
+  color: var(--ink);
+  font-size: var(--fs-deck);
+}
+
+.modules__icon {
+  grid-area: icon;
+  color: var(--ink);
+  transition: transform var(--t-fast) var(--ease-snap);
+}
+
+.modules__item[open] .modules__icon {
+  transform: rotate(45deg);
+}
+
+.modules__item summary:hover .modules__title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.modules__item p {
+  padding-bottom: var(--s-5);
+  max-width: 56ch;
+}
+
+/* ---------- 16 Portfólio ---------- */
+
+.portfolio__panel .lede {
+  margin-top: 0;
+}
+
+.portfolio__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--s-4) var(--s-7);
+  align-items: end;
+  padding: clamp(1.5rem, 1rem + 3vw, 4rem);
+  border-radius: var(--r-panel);
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-1);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 899px) {
+  .author__grid,
+  .study__grid,
+  .curriculum__grid,
+  .portfolio__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .author__portrait {
+    max-width: 26rem;
+  }
+
+  .curriculum__intro {
+    position: static;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .credentials {
+    grid-template-columns: 1fr;
+  }
+
+}
