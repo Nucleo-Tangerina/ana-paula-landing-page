@@ -1,6 +1,7 @@
 import { Lock, ShieldCheck, CreditCard } from 'lucide-react'
 import { hero, facts, trust } from '../content'
-import { Button, Placeholder } from '../components/ui'
+import { Button } from '../components/ui'
+import retrato from '../assets/ana-hero.webp'
 import { Thread } from '../components/Thread'
 import './Hero.css'
 
@@ -43,7 +44,14 @@ export function Hero() {
         </div>
 
         <figure className="hero__portrait">
-          <Placeholder label="Foto da Ana Paula Jorge: retrato recortado (PNG sem fundo), olhando para a câmera" ratio="4 / 5" />
+          <img
+            src={retrato}
+            alt="Ana Paula Jorge sorrindo, de blazer magenta, sentada à mesa em uma sala"
+            width={880}
+            height={1100}
+            fetchPriority="high"
+            decoding="async"
+          />
           <figcaption className="hero__caption">
             <strong>{hero.portraitCaption.name}</strong>
             <span>{hero.portraitCaption.role}</span>

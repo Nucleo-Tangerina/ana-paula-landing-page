@@ -1,23 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { nav as allNav, headerCta, live, testimonials, faq } from '../content'
-import { Button, Pending } from '../components/ui'
+import { nav, headerCta } from '../content'
+import { Button } from '../components/ui'
 import './Header.css'
-
-// Sections that hide themselves until confirmed must not leave dead anchors behind.
-const hidden = new Set([
-  ...(live(testimonials.items).length ? [] : ['#depoimentos']),
-  ...(live(faq.items).length ? [] : ['#faq']),
-])
-const nav = allNav.filter((n) => !hidden.has(n.href))
-
-const LOGO_PENDING = { pending: 'Logo oficial da Teia de Saberes (SVG colorido e branco).' }
 
 export function Wordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <a href="#top" className={`wordmark ${inverse ? 'wordmark--inverse' : ''}`} aria-label="Teia de Saberes, início">
       <span className="wordmark__name">Teia de Saberes</span>
-      <Pending item={LOGO_PENDING} />
     </a>
   )
 }

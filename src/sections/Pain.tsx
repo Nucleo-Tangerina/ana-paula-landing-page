@@ -1,22 +1,15 @@
 import { pain } from '../content'
-import { Placeholder, Section } from '../components/ui'
+import { Section } from '../components/ui'
 import './Pain.css'
 
 export function Pain() {
   return (
     <Section tone="paper" className="pain" labelledBy="pain-title">
       <div className="pain__grid">
-        <Placeholder
-          className="pain__photo"
-          label="Foto: mediadora acompanhando um aluno em atividade na sala de aula"
-          ratio="16 / 10"
-        />
-        <div>
-          <h2 id="pain-title" className="heading pain__heading">
-            {pain.heading}
-          </h2>
-          <p className="lede">{pain.lede}</p>
-        </div>
+        <h2 id="pain-title" className="heading pain__heading">
+          {pain.heading}
+        </h2>
+        <p className="lede pain__lede">{pain.lede}</p>
       </div>
 
       <ul role="list" className="pain__list" data-reveal>

@@ -1,48 +1,13 @@
 import { useEffect, useRef } from 'react'
-import { Check, ShieldCheck, Lock, CreditCard, Plus, Gift } from 'lucide-react'
-import {
-  bonuses,
-  offerBlock,
-  offer,
-  guarantee,
-  objections,
-  faq,
-  closing,
-  footer,
-  live,
-  isLive,
-  type QA,
-} from '../content'
-import { Button, Pending, Section } from '../components/ui'
+import { Check, ShieldCheck, Lock, CreditCard, Plus } from 'lucide-react'
+import { offerBlock, offer, guarantee, objections, faq, closing, footer, type QA } from '../content'
+import { Button, Section } from '../components/ui'
 import { Wordmark } from './Header'
 import { Seal } from '../components/Seal'
 import { track } from '../track'
 import './Close.css'
 
-// Blocks 17–23: what you get, what it costs, what if, and the last word.
-
-export function Bonuses() {
-  const items = live(bonuses.items)
-  if (!items.length) return null
-  return (
-    <Section tone="paper" className="bonuses" labelledBy="bonuses-title">
-      <h2 id="bonuses-title" className="heading">
-        {bonuses.heading}
-      </h2>
-      <ul role="list" className="bonuses__list" data-reveal>
-        {items.map((b) => (
-          <li key={b.title}>
-            <Gift size={22} strokeWidth={1.5} aria-hidden />
-            <span className="bonuses__label">{b.label}</span>
-            <strong>{b.title}</strong>
-            <Pending item={b} />
-          </li>
-        ))}
-      </ul>
-      <p className="bonuses__badge">{bonuses.badge}</p>
-    </Section>
-  )
-}
+// Blocks 18–23: what you get, what it costs, what if, and the last word.
 
 const TRUST_ICONS = [Lock, ShieldCheck, CreditCard]
 
@@ -70,11 +35,10 @@ export function Offer() {
             {offerBlock.heading}
           </h2>
           <ul role="list" className="offer__includes">
-            {live(offerBlock.includes).map((i) => (
-              <li key={i.text}>
+            {offerBlock.includes.map((i) => (
+              <li key={i}>
                 <Check size={18} strokeWidth={2} aria-hidden />
-                {i.text}
-                <Pending item={i} />
+                {i}
               </li>
             ))}
           </ul>
@@ -135,12 +99,6 @@ export function Guarantee() {
           </h2>
           <p className="guarantee__sub">{guarantee.subheading}</p>
           <p className="guarantee__text">{guarantee.text}</p>
-          {isLive(guarantee.terms) && (
-            <p className="guarantee__terms">
-              {guarantee.terms.text || 'Termos exatos da garantia.'}
-              <Pending item={guarantee.terms} />
-            </p>
-          )}
         </div>
       </div>
     </Section>
@@ -153,13 +111,10 @@ function Accordion({ items }: { items: QA[] }) {
       {items.map((i) => (
         <details key={i.q} className="qa__item">
           <summary>
-            <span>
-              {i.q}
-              <Pending item={i} />
-            </span>
+            <span>{i.q}</span>
             <Plus className="qa__icon" size={20} strokeWidth={1.5} aria-hidden />
           </summary>
-          <p>{i.a || '—'}</p>
+          <p>{i.a}</p>
         </details>
       ))}
     </div>
@@ -167,48 +122,26 @@ function Accordion({ items }: { items: QA[] }) {
 }
 
 export function Objections() {
-  const items = live(objections.items)
-  if (!items.length) return null
   return (
     <Section tone="paper" className="doubts" labelledBy="doubts-title">
       <div className="doubts__grid">
         <h2 id="doubts-title" className="heading doubts__heading">
           {objections.heading}
         </h2>
-        <Accordion items={items} />
+        <Accordion items={objections.items} />
       </div>
     </Section>
   )
 }
 
 export function Faq() {
-  const items = live(faq.items)
-  if (!items.length) return null
-  // Structured data only ever carries confirmed answers.
-  const confirmed = faq.items.filter((i) => !i.pending && i.a)
   return (
     <Section id="faq" tone="paper" className="doubts" labelledBy="faq-title">
-      {confirmed.length > 0 && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'FAQPage',
-              mainEntity: confirmed.map((i) => ({
-                '@type': 'Question',
-                name: i.q,
-                acceptedAnswer: { '@type': 'Answer', text: i.a },
-              })),
-            }).replace(/</g, '\\u003c'),
-          }}
-        />
-      )}
       <div className="doubts__grid">
         <h2 id="faq-title" className="heading doubts__heading">
           {faq.heading}
         </h2>
-        <Accordion items={items} />
+        <Accordion items={faq.items} />
       </div>
     </Section>
   )
@@ -267,36 +200,19 @@ export function Footer() {
               {offer.name}: {offer.subtitle}
             </p>
           </div>
-          <nav aria-label="Links institucionais">
-            {live(footer.legal).length > 0 && (
+          <nav aria-label="Redes sociais">
             <ul role="list" className="footer__links">
-              {live(footer.legal).map((l) => (
-                <li key={l.label}>
-                  <a href={l.href}>{l.label}</a>
-                  <Pending item={l} />
-                </li>
-              ))}
-            </ul>
-            )}
-            <ul role="list" className="footer__links">
-              {live(footer.social).map((l) => (
+              {footer.social.map((l) => (
                 <li key={l.label}>
                   <a href={l.href} target="_blank" rel="noopener noreferrer">
                     {l.label}
                   </a>
-                  <Pending item={l} />
                 </li>
               ))}
             </ul>
           </nav>
         </div>
         <div className="footer__bottom">
-          {isLive(footer.company) && (
-            <p>
-              {footer.company.text || 'Razão social · CNPJ · Endereço'}
-              <Pending item={footer.company} />
-            </p>
-          )}
           <p>{footer.copyright}</p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Check, Minus, HandHeart, HeartHandshake, School, Presentation, BookOpen, Accessibility } from 'lucide-react'
 import { transformation, solution, pillars, benefits, audience } from '../content'
-import { Button, Placeholder, Section } from '../components/ui'
+import { Button, Section } from '../components/ui'
 import './Journey.css'
 
 // Blocks 06–10: from the shift the visitor wants to the course that makes it.
@@ -47,27 +47,21 @@ export function Solution() {
   return (
     <Section id="formacao" tone="paper" className="solution" labelledBy="solution-title">
       <div className="solution__grid">
-        <Placeholder
-          className="solution__devices"
-          label="Mockup: notebook + celular mostrando a plataforma de aulas (prints reais da HeroSpark)"
-          ratio="4 / 3"
-        />
-        <div>
-          <h2 id="solution-title" className="solution__title">
-            {solution.heading}
-            <span>{solution.subheading}</span>
-          </h2>
-          <p className="lede">{solution.text}</p>
-
-          <ol className="method" aria-label="Método da formação" data-reveal>
-            {solution.method.map((m, i) => (
-              <li key={m} className={i === solution.method.length - 1 ? 'is-goal' : ''}>
-                {m}
-              </li>
-            ))}
-          </ol>
-        </div>
+        <h2 id="solution-title" className="solution__title">
+          {solution.heading}
+          <span>{solution.subheading}</span>
+        </h2>
+        <p className="lede solution__lede">{solution.text}</p>
       </div>
+
+      {/* The method is this band's picture: four steps across the whole rail. */}
+      <ol className="method" aria-label="Método da formação" data-reveal>
+        {solution.method.map((m, i) => (
+          <li key={m} className={i === solution.method.length - 1 ? 'is-goal' : ''}>
+            {m}
+          </li>
+        ))}
+      </ol>
     </Section>
   )
 }

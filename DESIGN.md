@@ -131,7 +131,7 @@ The neutrals are cool bone and navy, there is a single magenta voice, and one th
 
 ### Secondary
 - **The Teia Thread** (thread-cyan, thread-purple, thread-magenta): a 115deg gradient (cyan, then purple at 55%, then magenta). It appears on the hero ribbon, the page thread, the Big Idea bridge, the method timeline, and the underline under the Big Idea's closing phrase. Brand magenta lives here and is never used for buttons.
-- **Thread Purple** also colours the line icons on light list rows (audience, study, bonuses). **Thread Cyan** colours the icons on lacquer (the offer includes).
+- **Thread Purple** also colours the line icons on light list rows (audience, study). **Thread Cyan** colours the icons on lacquer (the offer includes).
 
 ### Neutral
 - **Bone Ground** (ground): the page ground and the alternating band tone.
@@ -163,7 +163,7 @@ The neutrals are cool bone and navy, there is a single magenta voice, and one th
 - **Title** (500, clamp 20 to 24px): row titles (pillars, modules, benefits, pain questions).
 - **Deck** (400, clamp 18 to 20px, 1.55): ledes and list rows, max 65ch.
 - **Body** (400, 17px, 1.6): running copy, max 65ch, with `text-wrap: pretty`.
-- **Small / Label** (400 to 500, 15px / 13px): facts, trust lines, and index labels ("Módulo 01", "Bônus 01"). Labels use sentence case and are never uppercase.
+- **Small / Label** (400 to 500, 15px / 13px): facts, trust lines, and index labels ("Módulo 01"). Labels use sentence case and are never uppercase.
 
 ### Named Rules
 **The Two Weights Rule.** Use only 400 and 500. Use no italics and no other face. Emphasis is weight 500 plus ink, or action magenta in the hero.
@@ -211,7 +211,7 @@ Buttons are confident and quiet. Each one is a single filled magenta with a chev
 ### Cards / Containers
 - **Corner Style:** 12px.
 - **Background:** paper on ground, or ground on paper (the author quote).
-- **Shadow Strategy:** Rest, or none with a hairline border (the testimonial cards).
+- **Shadow Strategy:** Rest, or none with a hairline border.
 - **Border:** 1px hairline.
 - **Internal Padding:** fluid, from 24px up to 64px.
 

@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React + Vite (escolha do usuário). Apenas frontend. Hospedagem ainda indefinida: o build precisa ser estático e portátil (Netlify, Vercel ou qualquer host estático).
+React + Vite (escolha do usuário). Apenas frontend. Publicação: **Wix**, num site dedicado com plano premium e domínio próprio. A página inteira é entregue como um único Custom Element (`<caminhos-landing>`), em `npm run build:wix`. O passo a passo está em `WIX.md`.
 
 ## Users
 
@@ -37,15 +37,15 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 ## Capabilities and Constraints
 
-- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um link de checkout que, por enquanto, é um placeholder configurável num único lugar.
+- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido no atributo `checkout-url` do elemento na Wix. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
 - A copy de referência está em `PAG - ANA PAULA.pdf`, com 23 blocos na ordem final.
-- Conteúdo ainda não confirmado entra no build atrás de uma flag e não é publicado como fato:
-  - bônus: sugeridos, ainda não existem;
-  - citação atribuída à Ana Paula: precisa de aprovação dela;
-  - escopo do portfólio;
-  - respostas do FAQ e das objeções: rascunhos;
-  - termos exatos da garantia na HeroSpark.
-- Tracking necessário: Meta Pixel, GA4/GTM, SEO e Open Graph (pré-visualização no WhatsApp).
+- O material além das fotos não vai existir (decisão de 03/10/2026). A página foi adaptada a isso:
+  - Saíram os depoimentos, os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
+  - A citação "Não queremos entregar apenas teoria…" é assinada pelo curso, não pela Ana Paula.
+  - O FAQ e as objeções mostram apenas respostas que o próprio copy sustenta. As perguntas sem resposta foram retiradas: tempo de acesso, gravação dos encontros, requisitos do certificado e funcionamento do aplicativo.
+  - O portfólio fica restrito à frase do copy.
+  - A garantia mantém o texto genérico do copy.
+- Tracking: na Wix, Pixel e GA entram pelas integrações de marketing da própria Wix. O elemento dispara `InitiateCheckout` e `ViewContent` quando elas existem. SEO e Open Graph ficam nas configurações de SEO da página na Wix.
 - Compliance: a página fala de preparação e desenvolvimento, nunca de competência ou emprego garantidos.
 
 ## Brand Commitments
@@ -58,7 +58,11 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 - Copy: `PAG - ANA PAULA.pdf`.
 - Credenciais da Ana Paula (segundo a apresentação existente): Mestre e Doutoranda; Professora da Rede Municipal; atua na Coordenação Municipal de Educação Especial; experiência no Ensino Superior; pesquisadora e palestrante; autora/organizadora de obras na área. O detalhe "Pedagoga… Cognição e Linguagem pela UENF" aparece só no mockup e **ainda precisa ser confirmado**.
-- **Ainda não há:** fotos da Ana Paula, logo, prints da plataforma ou do app, nem depoimentos reais. O layout reserva espaço para cada um desses itens. Depoimentos, nomes e fotos nunca podem ser inventados como se fossem reais. Placeholders precisam aparecer claramente como placeholders e ser substituídos antes da publicação.
+- **Fotos:** dois retratos reais da Ana Paula.
+  - Originais em `assets-src/`.
+  - Versões otimizadas: a de blazer magenta em `src/assets/ana-hero.webp`, no hero; o retrato com fundo de tijolos em `src/assets/ana-autora.webp`, no bloco de autoridade.
+  - `public/og.jpg` é um recorte da foto do blazer.
+- **Não há e não haverá:** logo (a marca aparece como texto "Teia de Saberes"), prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
 
 ## Product Principles
 

@@ -80,9 +80,13 @@
 
 .solution__grid {
   display: grid;
-  grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
-  gap: clamp(2rem, 1rem + 4vw, 5rem);
-  align-items: center;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: var(--s-4) clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: end;
+}
+
+.solution__lede {
+  margin-top: 0;
 }
 
 .solution__title {
@@ -103,10 +107,9 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: var(--s-7);
+  margin-top: var(--s-8);
   padding: 0;
   list-style: none;
-  counter-reset: step;
 }
 
 /* The thread again, as the line the method travels along. */
@@ -126,8 +129,9 @@
   position: relative;
   padding-top: var(--s-6);
   color: var(--ink);
-  font-size: var(--fs-small);
+  font-size: var(--fs-h3);
   font-weight: var(--w-medium);
+  letter-spacing: var(--track-heading);
 }
 
 .method li::before {

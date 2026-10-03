@@ -2,7 +2,6 @@ import type { ReactNode } from 'react'
 import { ChevronRight } from 'lucide-react'
 import { CHECKOUT_URL } from '../config'
 import { track } from '../track'
-import type { Pending as PendingT } from '../content'
 import './ui.css'
 
 type ButtonProps = {
@@ -42,32 +41,5 @@ export function Section({ id, tone = 'ground', className = '', children, labelle
     <section id={id} className={`band band--${tone} ${className}`} aria-labelledby={labelledBy}>
       <div className="rail">{children}</div>
     </section>
-  )
-}
-
-/** Dev-only flag on unconfirmed content; renders nothing in production. */
-export function Pending({ item }: { item: PendingT }) {
-  if (!import.meta.env.DEV || !item.pending) return null
-  return (
-    <span className="pending" title={item.pending}>
-      CONFIRMAR
-    </span>
-  )
-}
-
-type PlaceholderProps = {
-  /** What the real asset is, e.g. "Foto da Ana Paula (retrato, fundo neutro)". */
-  label: string
-  ratio?: string
-  className?: string
-  tone?: 'light' | 'dark'
-}
-
-/** Reserves the final asset's box so the layout holds when real files arrive. */
-export function Placeholder({ label, ratio = '4 / 5', className = '', tone = 'light' }: PlaceholderProps) {
-  return (
-    <div className={`ph ph--${tone} ${className}`} style={{ aspectRatio: ratio }} role="img" aria-label={label}>
-      {import.meta.env.DEV && <span className="ph__label">{label}</span>}
-    </div>
   )
 }

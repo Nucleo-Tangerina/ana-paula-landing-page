@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:wix": "tsc -b && vite build -c vite.wix.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/lexend": "^5.3.0",

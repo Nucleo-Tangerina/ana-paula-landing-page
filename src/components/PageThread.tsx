@@ -32,7 +32,7 @@ export function PageThread() {
         (c) => c.getBoundingClientRect().height > 0,
       )
       if (sections.length < 3 || !heroCanvas) return
-      const { left, right } = threadGutters()
+      const { left, right } = threadGutters(main)
       const w = main.clientWidth
       const box = (el: HTMLElement) => {
         const r = el.getBoundingClientRect()

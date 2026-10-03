@@ -1,14 +1,14 @@
-import { useEffect } from 'react'
+import { useEffect, type RefObject } from 'react'
 
 /**
  * Panels marked [data-reveal] rise 24px once as they enter. Content is visible
  * by default: only elements still below the fold when JS runs are held back,
  * and reduced motion skips the whole thing.
  */
-export function useReveal() {
+export function useReveal(root: RefObject<HTMLElement | null>) {
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    const els = [...document.querySelectorAll<HTMLElement>('[data-reveal]')].filter(
+    if (!root.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const els = [...root.current.querySelectorAll<HTMLElement>('[data-reveal]')].filter(
       (el) => el.getBoundingClientRect().top > window.innerHeight,
     )
     const io = new IntersectionObserver(
@@ -26,5 +26,5 @@ export function useReveal() {
       io.observe(el)
     }
     return () => io.disconnect()
-  }, [])
+  }, [root])
 }

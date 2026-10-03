@@ -2,17 +2,6 @@
 // The PDF's eyebrows are folded into each heading or `lede` (decision: option a).
 // A `lede` is an ordinary sentence set after (or leading into) its heading,
 // never a small uppercase label above it.
-//
-// `pending` = not confirmed for publication; the string says what's missing.
-// Dev shows pending items with a [CONFIRMAR] badge; production hides them,
-// and a section with nothing live hides itself.
-
-export type Pending = { pending?: string }
-
-export const live = <T extends Pending>(items: readonly T[]): T[] =>
-  import.meta.env.DEV ? [...items] : items.filter((i) => !i.pending)
-
-export const isLive = (item: Pending) => import.meta.env.DEV || !item.pending
 
 // ---------- Offer facts: defined once, reused across blocks 02, 03, 18, 22 ----------
 
@@ -45,7 +34,6 @@ export const nav = [
   { label: 'Sobre o curso', href: '#formacao' },
   { label: 'Conteúdo', href: '#conteudo' },
   { label: 'Para quem é', href: '#para-quem' },
-  { label: 'Depoimentos', href: '#depoimentos' },
   { label: 'FAQ', href: '#faq' },
 ] as const
 
@@ -157,10 +145,7 @@ export const audience = {
 export const author = {
   heading: 'Ana Paula Jorge',
   subheading: 'Quem vai guiar você nessa jornada une experiência acadêmica e vivência prática na Educação Especial.',
-  bio: {
-    text: 'Mestre e Doutoranda, professora da Rede Municipal e atuante na Coordenação Municipal de Educação Especial. Pesquisadora, palestrante e autora de obras na área, une a pesquisa acadêmica à vivência diária da inclusão nas escolas.',
-    pending: 'Bio curta redigida a partir das credenciais; Ana Paula precisa aprovar.',
-  } as { text: string } & Pending,
+  bio: 'Mestre e Doutoranda, professora da Rede Municipal e atuante na Coordenação Municipal de Educação Especial. Pesquisadora, palestrante e autora de obras na área, une a pesquisa acadêmica à vivência diária da inclusão nas escolas.',
   // UENF (mockup only) stays out until confirmed.
   credentials: [
     'Mestre e Doutoranda',
@@ -171,26 +156,12 @@ export const author = {
     'Autora e organizadora de obras na área',
   ],
   portraitAlt: 'Ana Paula Jorge, professora e coordenadora em Educação Especial',
+  // "We" is the formation speaking, so it is signed by the course, not put in Ana Paula's mouth.
   quote: {
     text: 'Não queremos entregar apenas teoria. Queremos ajudar você a estar mais preparado para a realidade da inclusão.',
-    by: 'Ana Paula Jorge',
-    pending: 'Frase atribuída à Ana Paula: precisa da aprovação dela.',
-  } as { text: string; by: string } & Pending,
-}
-
-// ---------- 13 Depoimentos ----------
-
-export type Testimonial = { quote: string; name: string; role: string; photo?: string } & Pending
-
-export const testimonials = {
-  heading: 'Conhecimento que começa na formação e chega à prática.',
-  lede: 'Experiências de quem já aprendeu com Ana Paula.',
-  items: [
-    { quote: 'Depoimento real de quem já atuava e tinha insegurança.', name: 'Nome', role: 'Profissão', pending: 'Placeholder: substituir por depoimento real com autorização.' },
-    { quote: 'Depoimento real de quem queria entrar na área.', name: 'Nome', role: 'Profissão', pending: 'Placeholder: substituir por depoimento real com autorização.' },
-    { quote: 'Depoimento real de quem tinha teoria, mas precisava de prática.', name: 'Nome', role: 'Profissão', pending: 'Placeholder: substituir por depoimento real com autorização.' },
-  ] as Testimonial[],
-}
+    by: 'Caminhos da Inclusão',
+  },
+} as const
 
 // ---------- 14 Experiência de estudo ----------
 
@@ -224,41 +195,28 @@ export const curriculum = {
 export const portfolio = {
   heading: 'Construa também seu portfólio profissional.',
   text: 'Durante a formação, você receberá direcionamento relacionado à construção do seu portfólio profissional.',
-  // Copy kept to the PDF's minimum; do not expand until Ana Paula confirms what is delivered.
+  // Kept to the PDF's own wording: what the portfolio guidance includes isn't specified.
 } as const
-
-// ---------- 17 Bônus ----------
-
-export const bonuses = {
-  heading: 'E para levar a prática ainda mais longe, você também recebe materiais complementares.',
-  badge: 'Incluídos na sua inscrição',
-  items: [
-    { label: 'Bônus 01', title: 'Checklist do Profissional de Apoio', pending: 'Bônus sugerido: não existe na oferta. Criar e aprovar antes de publicar.' },
-    { label: 'Bônus 02', title: 'Kit de Registros e Observações', pending: 'Bônus sugerido: não existe na oferta. Criar e aprovar antes de publicar.' },
-    { label: 'Bônus 03', title: 'Guia Prático de Adaptações', pending: 'Bônus sugerido: não existe na oferta. Criar e aprovar antes de publicar.' },
-  ] as ({ label: string; title: string } & Pending)[],
-}
 
 // ---------- 18 Oferta ----------
 
 export const offerBlock = {
   heading: 'Sua inscrição no Caminhos da Inclusão inclui:',
   includes: [
-    { text: 'Formação completa de 160 horas' },
-    { text: '5 módulos' },
-    { text: 'Aulas gravadas' },
-    { text: 'Acesso pelo aplicativo' },
-    { text: 'Encontros ao vivo quinzenais' },
-    { text: 'Orientação relacionada ao portfólio' },
-    { text: 'Certificado de conclusão' },
-    { text: 'Bônus confirmados', pending: 'Só entra quando houver bônus aprovado (bloco 17).' },
-  ] as ({ text: string } & Pending)[],
+    'Formação completa de 160 horas',
+    '5 módulos',
+    'Aulas gravadas',
+    'Acesso pelo aplicativo',
+    'Encontros ao vivo quinzenais',
+    'Orientação relacionada ao portfólio',
+    'Certificado de conclusão',
+  ],
   priceLead: 'Hoje por',
   priceOr: 'ou',
   cta: 'Quero garantir minha vaga',
   trust: ['Compra segura', `${offer.guaranteeDays} dias de garantia`, 'Pagamento seguro'],
   seatsLabel: 'Turma limitada',
-}
+} as const
 
 // ---------- 19 Garantia ----------
 
@@ -266,43 +224,37 @@ export const guarantee = {
   heading: `Você tem ${offer.guaranteeDays} dias para conhecer a formação.`,
   subheading: 'Sua decisão não precisa ser um salto no escuro.',
   text: 'Faça sua inscrição e conheça o conteúdo. Caso entenda que a formação não atende ao que procura, a garantia seguirá as condições definidas para a oferta.',
-  terms: { text: '', pending: 'Inserir os termos exatos da garantia praticados pela Teia/HeroSpark.' } as { text: string } & Pending,
 } as const
 
 // ---------- 20 Objeções / 21 FAQ ----------
 
-export type QA = { q: string; a: string } & Pending
-
-const DRAFT = 'Resposta-rascunho: revisar antes de publicar.'
-const TODO = 'Informação inexistente no material atual: confirmar com a Teia.'
+// Answers say only what the copy states. Questions it can't answer
+// (access period, recordings, certification requirements, the app) are left out.
+export type QA = { q: string; a: string }
 
 export const objections = {
   heading: 'Ainda está em dúvida? Talvez uma dessas perguntas esteja passando pela sua cabeça.',
   items: [
-    { q: 'Nunca trabalhei na área. Posso participar?', a: 'Sim. A formação começa pelos fundamentos da Educação Especial e foi pensada também para quem quer entrar na área e chegar à escola mais preparado.', pending: DRAFT },
-    { q: 'Já trabalho em escola. Essa formação também serve para mim?', a: 'Sim. Profissionais de apoio, cuidadores, auxiliares e educadores encontram aqui uma base estruturada para aproximar o que já sabem das situações do dia a dia.', pending: DRAFT },
-    { q: 'Consigo conciliar com meu trabalho?', a: 'As aulas são gravadas e podem ser assistidas de acordo com a sua disponibilidade, pelo computador ou pelo aplicativo. Os encontros ao vivo são quinzenais.', pending: DRAFT },
-    { q: 'Já tenho formação na área. Ainda faz sentido?', a: 'A proposta da formação é aproximar a teoria das situações reais do cotidiano escolar, com foco em mediação, adaptação e apoio. Para quem já tem a base teórica, esse é justamente o ponto de aprofundamento.', pending: DRAFT },
-    { q: 'Vou receber certificado?', a: 'Sim. A formação oferece certificado de conclusão, conforme os requisitos da formação.', pending: DRAFT },
-    { q: 'Preciso assistir às aulas em horários específicos?', a: 'Não para as aulas gravadas, que ficam disponíveis para você assistir quando puder. Apenas os encontros ao vivo acontecem em datas definidas.', pending: DRAFT },
+    { q: 'Nunca trabalhei na área. Posso participar?', a: 'Sim. A formação começa pelos fundamentos da Educação Especial e foi pensada também para quem quer entrar na área e chegar à escola mais preparado.' },
+    { q: 'Já trabalho em escola. Essa formação também serve para mim?', a: 'Sim. Profissionais de apoio, cuidadores, auxiliares e educadores encontram aqui uma base estruturada para aproximar o que já sabem das situações do dia a dia.' },
+    { q: 'Consigo conciliar com meu trabalho?', a: 'As aulas são gravadas e podem ser assistidas de acordo com a sua disponibilidade, pelo computador ou pelo aplicativo. Os encontros ao vivo são quinzenais.' },
+    { q: 'Já tenho formação na área. Ainda faz sentido?', a: 'A proposta da formação é aproximar a teoria das situações reais do cotidiano escolar, com foco em mediação, adaptação e apoio. Para quem já tem a base teórica, esse é justamente o ponto de aprofundamento.' },
+    { q: 'Vou receber certificado?', a: 'Sim. A formação oferece certificado de conclusão, conforme os requisitos da formação.' },
+    { q: 'Preciso assistir às aulas em horários específicos?', a: 'Não para as aulas gravadas, que ficam disponíveis para você assistir quando puder. Apenas os encontros ao vivo acontecem em datas definidas.' },
   ] as QA[],
 }
 
 export const faq = {
   heading: 'Perguntas frequentes',
   items: [
-    { q: 'Quem pode participar?', a: 'Profissionais de apoio, cuidadores escolares, auxiliares de classe, educadores, estudantes de licenciatura e demais profissionais interessados em Educação Especial.', pending: DRAFT },
-    { q: 'Qual é a carga horária?', a: '160 horas, distribuídas em 5 módulos.', pending: DRAFT },
-    { q: 'Por quanto tempo terei acesso?', a: '', pending: TODO },
-    { q: 'Como funcionam as aulas gravadas?', a: 'As aulas ficam disponíveis na plataforma e no aplicativo para você assistir de acordo com a sua disponibilidade.', pending: DRAFT },
-    { q: 'Como funcionam os encontros ao vivo?', a: 'São encontros quinzenais para aprofundamento dos temas da formação.', pending: DRAFT },
-    { q: 'Os encontros ficam gravados?', a: '', pending: TODO },
-    { q: 'Como funciona o certificado?', a: 'Ao concluir a formação conforme os requisitos definidos, você recebe o certificado de conclusão.', pending: DRAFT },
-    { q: 'Quais são os requisitos para certificação?', a: '', pending: TODO },
-    { q: 'Como funciona o aplicativo?', a: '', pending: TODO },
-    { q: 'Quais são as formas de pagamento?', a: `${offer.price} à vista ou em ${offer.installments}. Demais formas: confirmar.`, pending: TODO },
-    { q: 'Como funciona a garantia?', a: `Você tem ${offer.guaranteeDays} dias de garantia, nas condições definidas para a oferta.`, pending: DRAFT },
-    { q: 'A formação aborda TEA?', a: 'Sim. O Módulo 02, Desenvolvimento Humano e Deficiências, aborda TEA e níveis de suporte.', pending: DRAFT },
+    { q: 'Quem pode participar?', a: 'Profissionais de apoio, cuidadores escolares, auxiliares de classe, educadores, estudantes de licenciatura e demais profissionais interessados em Educação Especial.' },
+    { q: 'Qual é a carga horária?', a: '160 horas, distribuídas em 5 módulos.' },
+    { q: 'Como funcionam as aulas gravadas?', a: 'As aulas ficam disponíveis na plataforma e no aplicativo para você assistir de acordo com a sua disponibilidade.' },
+    { q: 'Como funcionam os encontros ao vivo?', a: 'São encontros quinzenais para aprofundamento dos temas da formação.' },
+    { q: 'Como funciona o certificado?', a: 'Ao concluir a formação conforme os requisitos definidos, você recebe o certificado de conclusão.' },
+    { q: 'Quais são as formas de pagamento?', a: `${offer.price} à vista ou em até ${offer.installments}.` },
+    { q: 'Como funciona a garantia?', a: `Você tem ${offer.guaranteeDays} dias de garantia, nas condições definidas para a oferta.` },
+    { q: 'A formação aborda TEA?', a: 'Sim. O Módulo 02, Desenvolvimento Humano e Deficiências, aborda TEA e níveis de suporte.' },
   ] as QA[],
 }
 
@@ -324,15 +276,6 @@ export const closing = {
 // ---------- 23 Rodapé ----------
 
 export const footer = {
-  legal: [
-    { label: 'Termos de Uso', href: '#', pending: 'Link dos Termos de Uso.' },
-    { label: 'Política de Privacidade', href: '#', pending: 'Link da Política de Privacidade.' },
-    { label: 'Contato', href: '#', pending: 'Contato oficial da Teia.' },
-  ] as ({ label: string; href: string } & Pending)[],
-  social: [
-    { label: 'Instagram', href: 'https://www.instagram.com/teia.de.saberes/' },
-    { label: 'YouTube', href: '#', pending: 'URL do canal no YouTube.' },
-  ] as ({ label: string; href: string } & Pending)[],
-  company: { text: '', pending: 'Razão social, CNPJ e endereço da Teia de Saberes.' } as { text: string } & Pending,
+  social: [{ label: 'Instagram', href: 'https://www.instagram.com/teia.de.saberes/' }],
   copyright: `© ${new Date().getFullYear()} Teia de Saberes. Todos os direitos reservados.`,
 }

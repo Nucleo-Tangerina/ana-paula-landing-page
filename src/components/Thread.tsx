@@ -319,7 +319,10 @@ export function Thread({ variant, className = '' }: { variant: Variant; classNam
       dpr = Math.min(window.devicePixelRatio || 1, 2)
       w = r.width
       h = r.height
-      if (tails) tail = { x: (threadGutters().right - r.left) / w, y: 1 }
+      if (tails) {
+        const g = threadGutters(canvas!)
+        tail = { x: (g.pageLeft + g.right - r.left) / w, y: 1 }
+      }
       canvas!.width = layer.width = Math.round(w * dpr)
       canvas!.height = layer.height = Math.round(h * dpr)
       draw()
