@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React + Vite (escolha do usuário). Apenas frontend. Publicação: **Wix**, num site dedicado com plano premium e domínio próprio. A página inteira é entregue como um único Custom Element (`<caminhos-landing>`), em `npm run build:wix`. O passo a passo está em `WIX.md`.
+React + Vite (escolha do usuário). Apenas frontend. Publicação: **Netlify**, como site estático (`npm run build` → `dist/`), configurado em `netlify.toml`. Variáveis de ambiente no `README.md`.
 
 ## Users
 
@@ -37,7 +37,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 ## Capabilities and Constraints
 
-- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido no atributo `checkout-url` do elemento na Wix. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
+- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido em `VITE_CHECKOUT_URL` no Netlify. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
 - A copy de referência está em `PAG - ANA PAULA.pdf`, com 23 blocos na ordem final.
 - O material além das fotos não vai existir (decisão de 03/10/2026). A página foi adaptada a isso:
   - Saíram os depoimentos, os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
@@ -45,7 +45,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
   - O FAQ e as objeções mostram apenas respostas que o próprio copy sustenta. As perguntas sem resposta foram retiradas: tempo de acesso, gravação dos encontros, requisitos do certificado e funcionamento do aplicativo.
   - O portfólio fica restrito à frase do copy.
   - A garantia mantém o texto genérico do copy.
-- Tracking: na Wix, Pixel e GA entram pelas integrações de marketing da própria Wix. O elemento dispara `InitiateCheckout` e `ViewContent` quando elas existem. SEO e Open Graph ficam nas configurações de SEO da página na Wix.
+- Tracking: Meta Pixel e GTM entram por variável de ambiente (`VITE_META_PIXEL_ID`, `VITE_GTM_ID`), e os scripts só carregam se elas estiverem preenchidas. A página dispara `InitiateCheckout` e `ViewContent`. SEO, Open Graph e o JSON-LD do curso ficam em `index.html`.
 - Compliance: a página fala de preparação e desenvolvimento, nunca de competência ou emprego garantidos.
 
 ## Brand Commitments

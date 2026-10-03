@@ -7,7 +7,7 @@ related_targets: ["index.html"]
 
 # Surface: landing page "Caminhos da Inclusão"
 
-Mode: Persuade. Audience: professionals working in school inclusion or entering it, mostly on mobile and arriving from social media. Action: click through to checkout (URL set in Wix as the `checkout-url` attribute). Proof: Ana Paula Jorge's two real portraits and credentials, the 160h / 5-module structure, the program outline and the 30-day guarantee. No testimonials, platform prints or logo will exist; those blocks were removed rather than faked. Constraints: everything in PRODUCT.md; copy from `PAG - ANA PAULA.pdf`, in block order. The page ships as a Wix custom element.
+Mode: Persuade. Audience: professionals working in school inclusion or entering it, mostly on mobile and arriving from social media. Action: click through to checkout (`VITE_CHECKOUT_URL`). Proof: Ana Paula Jorge's two real portraits and credentials, the 160h / 5-module structure, the program outline and the 30-day guarantee. No testimonials, platform prints or logo will exist; those blocks were removed rather than faked. Constraints: everything in PRODUCT.md; copy from `PAG - ANA PAULA.pdf`, in block order. The page ships as a static site on Netlify.
 
 Chosen direction: Civic Bureau Prospectus (catalog challenger `civic-bureau-prospectus-late-modern`), translated into the Teia brand. Memorable moment: a single thread of the "teia" crosses the page and becomes the bridge in the Big Idea.
 
@@ -29,4 +29,4 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 - Exact typeface: a non-default geometric grotesque, self-hosted (to be chosen in Phase 1; must have full Portuguese diacritics).
 - Floating CTA on mobile: decide during the build.
-- Checkout link: not yet; set `checkout-url` in Wix when it exists.
+- Checkout link: not yet; set `VITE_CHECKOUT_URL` on Netlify when it exists.
