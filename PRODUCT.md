@@ -62,7 +62,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
   - Originais e recortes em `assets-src/`.
   - Versões otimizadas: a de blazer magenta em `src/assets/ana-hero.webp`, no hero; o retrato com fundo de tijolos em `src/assets/ana-autora.webp`, no bloco de autoridade.
   - `public/og.jpg` é um recorte da foto do blazer.
-- **Não há e não haverá:** logo (a marca aparece como texto "Teia de Saberes"), prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
+- **Não há e não haverá:** prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
 
 ## Product Principles
 
@@ -74,3 +74,5 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 ## Accessibility & Inclusion
 
 O público é de Educação Especial, então a acessibilidade da página faz parte da credibilidade: WCAG 2.1 AA, HTML semântico, navegação completa por teclado nos accordions, no carrossel e no menu, `prefers-reduced-motion` respeitado e texto alternativo descritivo em todas as fotos.
+
+- **Logo:** `assets-src/teia-logo.png` (colorido, no cabeçalho) e `assets-src/teia-logo-branca.png` (rodapé); o símbolo sozinho vira o favicon.
