@@ -114,3 +114,34 @@
   font-size: var(--fs-deck);
   max-width: var(--measure);
 }
+
+/* ---------- Tones & icon chips ---------- */
+
+.tone-cyan { --tone: var(--tone-cyan); --tint: var(--tint-cyan); }
+.tone-purple { --tone: var(--tone-purple); --tint: var(--tint-purple); }
+.tone-magenta { --tone: var(--tone-magenta); --tint: var(--tint-magenta); }
+.tone-green { --tone: var(--tone-green); --tint: var(--tint-green); }
+.tone-orange { --tone: var(--tone-orange); --tint: var(--tint-orange); }
+
+.chip {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 14px;
+  background: var(--tint, var(--ground));
+  color: var(--tone, var(--ink));
+}
+
+.chip--sm {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 10px;
+}
+
+/* A tinted card: the tone's soft ground, its ink for the icon. */
+.tcard {
+  border-radius: var(--r-panel);
+  background: var(--tint);
+}

@@ -152,24 +152,35 @@
   box-shadow: 0 0 0 6px rgb(11 31 77 / 0.1);
 }
 
-/* ---------- 08 Pilares ---------- */
+/* ---------- 08 Pilares: five tinted cards, one per module ---------- */
 
 .pillars__row {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--s-4);
   margin-top: var(--s-7);
   padding: 0;
   list-style: none;
-  border-top: 1px solid var(--ink);
 }
 
 .pillars__item {
-  padding: var(--s-5) var(--s-5) var(--s-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  padding: var(--s-5);
+  border-radius: var(--r-panel);
+  background: var(--tint);
+  transition: transform var(--t-fast) var(--ease-snap), box-shadow var(--t-fast) var(--ease-snap);
 }
 
-.pillars__item + .pillars__item {
-  padding-left: var(--s-5);
-  border-left: 1px solid var(--hairline);
+.pillars__item .chip {
+  background: var(--paper);
+  margin-bottom: var(--s-2);
+}
+
+.pillars__item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
 }
 
 .pillars__title {
@@ -177,7 +188,6 @@
 }
 
 .pillars__item p {
-  margin-top: var(--s-3);
   font-size: var(--fs-small);
 }
 
@@ -185,7 +195,7 @@
   margin-top: var(--s-7);
 }
 
-/* ---------- 09 Benefícios ---------- */
+/* ---------- 09 Benefícios: icons that keep breathing ---------- */
 
 .benefits__heading {
   max-width: 24ch;
@@ -194,13 +204,35 @@
 .benefits__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0 var(--s-6);
+  gap: var(--s-4);
   margin-top: var(--s-7);
 }
 
 .benefits__item {
-  padding-block: var(--s-5) var(--s-6);
-  border-top: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-4);
+  align-items: start;
+  padding: var(--s-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-panel);
+  background: var(--paper);
+  transition: border-color var(--t-fast) var(--ease-snap), transform var(--t-fast) var(--ease-snap);
+}
+
+.benefits__item .chip {
+  grid-row: span 2;
+  animation: chip-float 4.8s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.8s);
+}
+
+.benefits__item:hover {
+  border-color: var(--tone);
+  transform: translateY(-3px);
+}
+
+.benefits__item:hover .chip {
+  animation: chip-nudge 0.6s var(--ease-snap);
 }
 
 .benefits__item dt {
@@ -211,8 +243,31 @@
 }
 
 .benefits__item dd {
-  margin: var(--s-2) 0 0;
-  max-width: 30ch;
+  margin: var(--s-1) 0 0;
+  font-size: var(--fs-small);
+}
+
+/* A slow bob, each chip on its own phase, so the grid is never still in unison. */
+@keyframes chip-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-4deg);
+  }
+}
+
+@keyframes chip-nudge {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.12) rotate(6deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
 }
 
 /* ---------- 10 Para quem é ---------- */
@@ -224,23 +279,24 @@
   align-items: start;
 }
 
+.audience__list {
+  display: grid;
+  gap: var(--s-2);
+}
+
 .audience__list li {
   display: flex;
   align-items: center;
   gap: var(--s-4);
-  padding-block: var(--s-4);
-  border-bottom: 1px solid var(--hairline);
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-panel);
+  background: var(--tint);
   color: var(--ink);
   font-size: var(--fs-deck);
 }
 
-.audience__list li:first-child {
-  border-top: 1px solid var(--hairline);
-}
-
-.audience__list svg {
-  flex: none;
-  color: var(--thread-purple);
+.audience__list .chip {
+  background: var(--paper);
 }
 
 .audience__highlight {
@@ -262,17 +318,20 @@
 @media (max-width: 999px) {
   .pillars__row {
     grid-template-columns: 1fr;
+    gap: var(--s-3);
   }
 
-  .pillars__item,
-  .pillars__item + .pillars__item {
-    padding: var(--s-4) 0;
-    border-left: 0;
-    border-bottom: 1px solid var(--hairline);
+  .pillars__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--s-4);
+    row-gap: var(--s-1);
+    align-items: start;
   }
 
-  .pillars__item p {
-    margin-top: var(--s-1);
+  .pillars__item .chip {
+    grid-row: span 2;
+    margin-bottom: 0;
   }
 }
 

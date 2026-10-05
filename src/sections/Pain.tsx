@@ -1,6 +1,10 @@
 import { pain } from '../content'
-import { Section } from '../components/ui'
+import { CircleHelp, ShieldQuestion, Lightbulb, UserCheck } from 'lucide-react'
+import { Chip, Section } from '../components/ui'
+import { toneAt } from '../components/tones'
 import './Pain.css'
+
+const PAIN_ICONS = [CircleHelp, ShieldQuestion, Lightbulb, UserCheck]
 
 export function Pain() {
   return (
@@ -13,8 +17,9 @@ export function Pain() {
       </div>
 
       <ul role="list" className="pain__list" data-reveal>
-        {pain.items.map((p) => (
-          <li key={p.question} className="pain__item">
+        {pain.items.map((p, i) => (
+          <li key={p.question} className={`pain__item tone-${toneAt(i)}`}>
+            <Chip icon={PAIN_ICONS[i]} size="sm" />
             <h3 className="pain__question">{p.question}</h3>
             <p className="pain__voice">“{p.voice}”</p>
           </li>

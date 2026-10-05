@@ -136,7 +136,10 @@
 
 .facts__item {
   display: grid;
-  gap: 2px;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-3);
+  row-gap: 2px;
+  align-items: center;
   padding: var(--s-4) var(--s-5);
 }
 
@@ -148,6 +151,10 @@
   color: var(--ink);
   font-weight: var(--w-medium);
   font-size: var(--fs-small);
+}
+
+.facts__item .chip {
+  grid-row: span 2;
 }
 
 .facts__detail {
@@ -196,22 +203,32 @@
     bottom: var(--s-5);
   }
 
-  /* A ruled list, value left and detail right: rows, not tiles. */
+  /* Phones: the five facts become coloured tiles, two per row. */
   .facts {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-2);
+    border: 0;
     background: transparent;
   }
 
-  .facts__item {
-    grid-template-columns: 1fr auto;
-    align-items: baseline;
-    padding: var(--s-3) 0;
-    background: var(--ground);
+  .facts__item,
+  .facts__item + .facts__item {
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: var(--s-3);
+    border: 0;
+    border-radius: var(--r-panel);
+    background: var(--tint);
   }
 
-  .facts__item + .facts__item {
-    border-left: 0;
-    border-top: 1px solid var(--hairline);
+  .facts__item .chip {
+    grid-row: auto;
+    margin-bottom: var(--s-2);
+    background: var(--paper);
+  }
+
+  .facts__item:last-child {
+    grid-column: 1 / -1;
   }
 }
 

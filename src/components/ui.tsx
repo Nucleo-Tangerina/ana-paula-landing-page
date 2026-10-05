@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import type { LucideIcon } from 'lucide-react'
 import { ChevronRight } from 'lucide-react'
 import { CHECKOUT_URL } from '../config'
 import { track } from '../track'
@@ -41,5 +42,13 @@ export function Section({ id, tone = 'ground', className = '', children, labelle
     <section id={id} className={`band band--${tone} ${className}`} aria-labelledby={labelledBy}>
       <div className="rail">{children}</div>
     </section>
+  )
+}
+
+export function Chip({ icon: Icon, size = 'md' }: { icon: LucideIcon; size?: 'md' | 'sm' }) {
+  return (
+    <span className={`chip ${size === 'sm' ? 'chip--sm' : ''}`} aria-hidden>
+      <Icon size={size === 'sm' ? 18 : 24} strokeWidth={1.75} />
+    </span>
   )
 }

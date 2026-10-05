@@ -61,6 +61,19 @@
   font-weight: var(--w-medium);
 }
 
+.price__seal {
+  position: absolute;
+  top: calc(-1 * var(--s-7));
+  right: calc(-1 * var(--s-5));
+  width: 7.5rem;
+  height: auto;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgb(4 12 34 / 0.35);
+  transform: rotate(8deg);
+}
+
 .price__name {
   color: var(--ink);
   font-weight: var(--w-medium);

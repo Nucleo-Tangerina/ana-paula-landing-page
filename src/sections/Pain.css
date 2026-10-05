@@ -30,6 +30,10 @@
   border-left: 1px solid var(--hairline);
 }
 
+.pain__item .chip {
+  margin-bottom: var(--s-3);
+}
+
 .pain__question {
   font-size: var(--fs-h3);
   line-height: 1.2;
@@ -83,14 +87,24 @@
   }
 }
 
+/* Phones: each doubt becomes its own tinted card. */
 @media (max-width: 600px) {
   .pain__list {
     grid-template-columns: 1fr;
+    gap: var(--s-3);
+    border-top: 0;
   }
 
   .pain__item,
+  .pain__item + .pain__item,
   .pain__item:nth-child(even) {
-    padding-inline: 0;
-    border-left: 0;
+    padding: var(--s-4);
+    border: 0;
+    border-radius: var(--r-panel);
+    background: var(--tint);
+  }
+
+  .pain__item .chip {
+    background: var(--paper);
   }
 }

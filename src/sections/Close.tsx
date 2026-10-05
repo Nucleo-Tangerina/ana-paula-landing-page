@@ -4,6 +4,7 @@ import { offerBlock, offer, guarantee, objections, faq, closing, footer, type QA
 import { Button, Section } from '../components/ui'
 import { Wordmark } from './Header'
 import { Seal } from '../components/Seal'
+import { PayMethods } from '../components/PayMethods'
 import { track } from '../track'
 import './Close.css'
 
@@ -45,6 +46,13 @@ export function Offer() {
         </div>
 
         <div className="price" ref={card}>
+          {/* Authority seal: facts of the offer only, struck like the guarantee's. */}
+          <Seal
+            className="price__seal"
+            figure={`${offer.hours}h`}
+            unit="CERTIFICADO"
+            ring="FORMAÇÃO COMPLETA · CERTIFICADO DE CONCLUSÃO · "
+          />
           <p className="price__name">
             {offer.name}
             <span>{offer.subtitle}</span>
@@ -77,6 +85,7 @@ export function Offer() {
               )
             })}
           </ul>
+          <PayMethods />
         </div>
       </div>
     </Section>
