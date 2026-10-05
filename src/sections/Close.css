@@ -394,3 +394,11 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .price__seal {
+    top: calc(-1 * var(--s-6));
+    right: var(--s-3);
+    width: 5.25rem;
+  }
+}

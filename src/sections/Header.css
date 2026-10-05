@@ -143,3 +143,15 @@
     font-size: 1rem;
   }
 }
+
+/* Narrow phones: the mark alone, so the CTA never clips the name. */
+@media (max-width: 440px) {
+  .header .wordmark__name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
