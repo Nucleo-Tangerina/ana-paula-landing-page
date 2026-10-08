@@ -32,7 +32,7 @@
 }
 
 .btn--primary {
-  background: linear-gradient(180deg, #e6198f, var(--action));
+  background: linear-gradient(180deg, #dc0a85, var(--action));
   color: #fff;
   box-shadow: 0 2px 4px rgb(184 0 109 / 0.2), 0 12px 28px rgb(214 0 127 / 0.32);
 }
@@ -155,7 +155,7 @@
 
 .band--lacquer .accent,
 .stage .accent {
-  color: #ffc4e6;
+  color: #ffd6ee;
 }
 
 /* ---------- Stage: a saturated rounded field inside the rail ---------- */

@@ -6,7 +6,7 @@ import { Hero } from './sections/Hero'
 import { Pain } from './sections/Pain'
 import { BigIdea } from './sections/BigIdea'
 import { Transformation, Solution, Pillars, Benefits, Audience } from './sections/Journey'
-import { Author, Study, Curriculum, Portfolio } from './sections/Proof'
+import { Author, Study, Curriculum } from './sections/Proof'
 import { Video, Testimonials } from './sections/Social'
 import { Offer, Guarantee, Objections, Faq, Closing, Footer } from './sections/Close'
 
@@ -34,10 +34,9 @@ export default function App() {
         <Testimonials />
         <Study />
         <Curriculum />
-        <Portfolio />
+        <Objections />
         <Offer />
         <Guarantee />
-        <Objections />
         <Faq />
         <Closing />
         <PageThread />

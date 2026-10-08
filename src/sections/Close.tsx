@@ -132,7 +132,7 @@ function Accordion({ items }: { items: QA[] }) {
 
 export function Objections() {
   return (
-    <Section tone="paper" className="doubts" labelledBy="doubts-title">
+    <Section tone="paper" className="doubts doubts--pre" labelledBy="doubts-title">
       <div className="doubts__grid">
         <h2 id="doubts-title" className="heading doubts__heading">
           <TwoTone text={objections.heading} />
@@ -174,11 +174,6 @@ export function Closing() {
 
         <div className="closing__buy">
           <p className="closing__invite">{closing.invite}</p>
-          <ul role="list" className="closing__summary">
-            {closing.summary.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
           <p className="closing__price">
             <strong className="tabular">{offer.price}</strong>
             <span>

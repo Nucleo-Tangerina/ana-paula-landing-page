@@ -279,24 +279,18 @@
   align-items: start;
 }
 
-.audience__list {
-  display: grid;
-  gap: var(--s-2);
-}
-
 .audience__list li {
   display: flex;
   align-items: center;
   gap: var(--s-4);
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-panel);
-  background: var(--tint);
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--hairline);
   color: var(--ink);
   font-size: var(--fs-deck);
 }
 
-.audience__list .chip {
-  background: var(--paper);
+.audience__list li:last-child {
+  border-bottom: 1px solid var(--hairline);
 }
 
 .audience__highlight {

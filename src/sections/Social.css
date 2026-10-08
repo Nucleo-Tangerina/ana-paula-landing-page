@@ -77,13 +77,13 @@
 }
 
 .voices__lede {
-  color: rgb(255 255 255 / 0.85);
+  color: #fff;
   font-size: var(--fs-deck);
 }
 
 .voices__list {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: var(--s-4);
   margin-top: var(--s-7);
   align-items: start;
@@ -149,5 +149,18 @@
   .voices__head,
   .voices__list {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Phones: wider cards, testimonial text in the sans face so long quotes stay readable. */
+@media (max-width: 600px) {
+  .voices__card {
+    padding: var(--s-5) var(--s-4);
+  }
+
+  .voices__card blockquote p,
+  .voices__card:first-child blockquote p {
+    font-family: var(--font);
+    font-size: var(--fs-small);
   }
 }

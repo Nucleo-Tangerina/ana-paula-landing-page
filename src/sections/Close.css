@@ -380,6 +380,8 @@
 }
 
 .footer__links a {
+  display: inline-block;
+  padding-block: 12px;
   color: var(--on-lacquer);
   text-decoration: none;
 }

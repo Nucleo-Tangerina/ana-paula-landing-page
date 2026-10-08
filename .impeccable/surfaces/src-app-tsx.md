@@ -30,3 +30,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 - Exact typeface: a non-default geometric grotesque, self-hosted (to be chosen in Phase 1; must have full Portuguese diacritics).
 - Floating CTA on mobile: decide during the build.
 - Checkout link: not yet; set `VITE_CHECKOUT_URL` on Netlify when it exists.
+
+## Amendment, 2026-10-07: contained premium
+
+The user asked for a more premium look, modelled on `.impeccable/ref/monique.jpg`. After the critique they chose a *contained* version:
+- pill buttons;
+- three saturated rounded stages: purple for pain, magenta→purple for testimonials, blue for closing;
+- the author portrait on an organic blue shape;
+- a single accent colour (the action magenta). The two-tone heading appears only in the closing;
+- light lists (study, audience) return to hairline rows; pastel tiles remain only on facts, pillars, benefits and credentials.
+
+The thread and the Big Idea bridge remain the owned signature.

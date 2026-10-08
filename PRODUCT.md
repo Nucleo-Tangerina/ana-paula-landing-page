@@ -40,7 +40,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 - Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido em `VITE_CHECKOUT_URL` no Netlify. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
 - A copy de referência está em `PAG - ANA PAULA.pdf`, com 23 blocos na ordem final.
 - O material além das fotos não vai existir (decisão de 03/10/2026). A página foi adaptada a isso:
-  - Saíram os depoimentos, os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
+  - Saíram os os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
   - A citação "Não queremos entregar apenas teoria…" é assinada pelo curso, não pela Ana Paula.
   - O FAQ e as objeções mostram apenas respostas que o próprio copy sustenta. As perguntas sem resposta foram retiradas: tempo de acesso, gravação dos encontros, requisitos do certificado e funcionamento do aplicativo.
   - O portfólio fica restrito à frase do copy.
@@ -76,3 +76,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 O público é de Educação Especial, então a acessibilidade da página faz parte da credibilidade: WCAG 2.1 AA, HTML semântico, navegação completa por teclado nos accordions, no carrossel e no menu, `prefers-reduced-motion` respeitado e texto alternativo descritivo em todas as fotos.
 
 - **Logo:** `assets-src/teia-logo.png` (colorido, no cabeçalho) e `assets-src/teia-logo-branca.png` (rodapé); o símbolo sozinho vira o favicon.
+- **Depoimentos (confirmados pelo usuário em 07/10/2026 como reais, desta formação e autorizados):**
+  - Maycon Eliseu Couto, pelo WhatsApp;
+  - @monique3173, pelo Instagram.
+  - Ficaram de fora: o depoimento anônimo, e o comentário que cita um "decreto de 180 horas" (afirmação incorreta, porque o curso tem 160h).

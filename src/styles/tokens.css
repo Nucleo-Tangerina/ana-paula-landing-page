@@ -93,8 +93,8 @@
   /* Stage panels: the saturated rounded fields that carry key sections. */
   --stage-purple: linear-gradient(135deg, #6b2fa6, #92278f 55%, #b02a8e);
   --stage-blue: linear-gradient(135deg, #0b3f9c, #1f5fc4 60%, #27aae1);
-  --stage-magenta: linear-gradient(135deg, #c4006f, #e2337f 55%, #f58220);
-  --accent: #8a2387;
+  --stage-magenta: linear-gradient(135deg, #b3005f, #c4006f 45%, #8a2387);
+  --accent: var(--action);
 
   /* Motion */
   --ease-snap: cubic-bezier(0.25, 1, 0.5, 1);

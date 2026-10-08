@@ -95,14 +95,6 @@
   overflow: hidden;
 }
 
-.author__quote::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 4px;
-  background: var(--thread);
-}
-
 .author__quote-mark {
   color: var(--thread-cyan);
 }
@@ -141,22 +133,16 @@
   align-items: start;
 }
 
-.study__list {
-  display: grid;
-  gap: var(--s-2);
-}
-
 .study__list li {
   display: flex;
   align-items: center;
   gap: var(--s-4);
-  padding: var(--s-3) var(--s-4);
-  border-radius: var(--r-panel);
-  background: var(--tint);
+  padding-block: var(--s-4);
+  border-top: 1px solid var(--hairline);
 }
 
-.study__list .chip {
-  background: var(--paper);
+.study__list li:last-child {
+  border-bottom: 1px solid var(--hairline);
 }
 
 .study__list strong {

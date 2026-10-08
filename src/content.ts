@@ -53,7 +53,7 @@ export const hero = {
 // ---------- 04 Dor ----------
 
 export const pain = {
-  heading: 'Conhecer a teoria é diferente de |saber o que fazer quando a situação acontece diante de você.',
+  heading: 'Conhecer a teoria é diferente de saber o que fazer quando a situação acontece diante de você.',
   lede: 'Se você quer trabalhar com inclusão, talvez já tenha sentido isso.',
   items: [
     { question: 'Como devo agir?', voice: 'Tenho conhecimento, mas ainda me sinto inseguro diante de determinadas situações.' },
@@ -76,7 +76,7 @@ export const bigIdea = {
 // ---------- 06 Transformação ----------
 
 export const transformation = {
-  heading: 'Da insegurança para uma |atuação mais preparada.',
+  heading: 'Da insegurança para uma atuação mais preparada.',
   text: 'Não se trata apenas de concluir mais um curso. Trata-se de construir uma base para estar mais preparado quando alguém depender da sua atuação.',
   before: ['Não sei como agir.', 'Conhecimento fragmentado.', 'Teoria sem aplicação.', 'Insegurança na mediação.', 'Dúvidas sobre o papel profissional.'],
   after: [
@@ -100,7 +100,7 @@ export const solution = {
 // ---------- 08 Pilares ----------
 
 export const pillars = {
-  heading: 'Os 5 pilares da |sua preparação.',
+  heading: 'Os 5 pilares da sua preparação.',
   lede: 'Uma jornada completa, do fundamento à atuação.',
   items: [
     { title: 'Fundamentos', text: 'Entenda os princípios e a legislação que orientam a Educação Especial e Inclusiva.' },
@@ -115,7 +115,7 @@ export const pillars = {
 // ---------- 09 Benefícios ----------
 
 export const benefits = {
-  heading: 'Mais do que conteúdo: |o que essa formação busca desenvolver em você.',
+  heading: 'Mais do que conteúdo: o que essa formação busca desenvolver em você.',
   items: [
     { title: 'Segurança', text: 'Mais clareza para lidar com situações da rotina escolar.' },
     { title: 'Compreensão', text: 'Entender necessidades e particularidades dos alunos.' },
@@ -129,7 +129,7 @@ export const benefits = {
 // ---------- 10 Para quem é ----------
 
 export const audience = {
-  heading: 'Se você faz parte da Educação ou quer entrar nessa área, |essa formação pode ser para você.',
+  heading: 'Se você faz parte da Educação ou quer entrar nessa área, essa formação pode ser para você.',
   items: [
     'Profissional de apoio',
     'Cuidador escolar',
@@ -168,7 +168,7 @@ export const author = {
 
 // Empty `src` keeps the slot as a placeholder; paste a YouTube/Vimeo embed URL to show the video.
 export const video = {
-  heading: 'Conheça a |formação por dentro.',
+  heading: 'Conheça a formação por dentro.',
   src: '',
   title: 'Vídeo de apresentação do Caminhos da Inclusão',
   soon: 'Vídeo em breve',
@@ -178,8 +178,8 @@ export const video = {
 
 // Transcribed from what students sent (WhatsApp / Instagram), lightly corrected for typos.
 export const testimonials = {
-  heading: 'Conhecimento que começa na formação |e chega à prática.',
-  lede: 'Experiências de quem já aprendeu com Ana Paula.',
+  heading: 'Conhecimento que começa na formação e chega à prática.',
+  lede: 'Alunos do Caminhos da Inclusão contam como foi a formação.',
   items: [
     {
       quote:
@@ -193,18 +193,13 @@ export const testimonials = {
       name: '@monique3173',
       source: 'Aluna da formação · via Instagram',
     },
-    {
-      quote: 'Curso ótimo e completo, amei!',
-      name: 'Aluna da formação',
-      source: 'via WhatsApp',
-    },
   ],
 }
 
 // ---------- 14 Experiência de estudo ----------
 
 export const study = {
-  heading: 'Estude do seu jeito: |uma formação completa que acompanha sua rotina.',
+  heading: 'Estude do seu jeito: uma formação completa que acompanha sua rotina.',
   items: [
     { title: 'Aulas gravadas', text: 'Assista de acordo com sua disponibilidade.' },
     { title: 'Aplicativo', text: 'Leve sua formação com você.' },
@@ -217,7 +212,7 @@ export const study = {
 // ---------- 15 Conteúdo programático ----------
 
 export const curriculum = {
-  heading: 'Uma formação estruturada |do fundamento à prática.',
+  heading: 'Uma formação estruturada do fundamento à prática.',
   lede: 'Veja tudo o que você vai aprender.',
   modules: [
     { n: '01', title: 'Fundamentos e Legislação', hours: 30, text: 'História da Educação Especial e Inclusiva, marco legal e legislações apresentadas na formação.' },
@@ -231,7 +226,7 @@ export const curriculum = {
 // ---------- 16 Portfólio ----------
 
 export const portfolio = {
-  heading: 'Construa também seu |portfólio profissional.',
+  heading: 'Construa também seu portfólio profissional.',
   text: 'Durante a formação, você receberá direcionamento relacionado à construção do seu portfólio profissional.',
   // Kept to the PDF's own wording: what the portfolio guidance includes isn't specified.
 } as const
@@ -239,7 +234,7 @@ export const portfolio = {
 // ---------- 18 Oferta ----------
 
 export const offerBlock = {
-  heading: 'Sua inscrição no Caminhos da Inclusão |inclui:',
+  heading: 'Sua inscrição no Caminhos da Inclusão inclui:',
   includes: [
     'Formação completa de 160 horas',
     '5 módulos',
@@ -270,29 +265,26 @@ export const guarantee = {
 // (access period, recordings, certification requirements, the app) are left out.
 export type QA = { q: string; a: string }
 
+// Two objections answered before the offer, where the decision forms;
+// the rest after it, merged with the FAQ and de-duplicated (8 at most).
 export const objections = {
-  heading: 'Ainda está em dúvida? |Talvez uma dessas perguntas esteja passando pela sua cabeça.',
+  heading: 'Ainda está em dúvida?',
   items: [
     { q: 'Nunca trabalhei na área. Posso participar?', a: 'Sim. A formação começa pelos fundamentos da Educação Especial e foi pensada também para quem quer entrar na área e chegar à escola mais preparado.' },
-    { q: 'Já trabalho em escola. Essa formação também serve para mim?', a: 'Sim. Profissionais de apoio, cuidadores, auxiliares e educadores encontram aqui uma base estruturada para aproximar o que já sabem das situações do dia a dia.' },
-    { q: 'Consigo conciliar com meu trabalho?', a: 'As aulas são gravadas e podem ser assistidas de acordo com a sua disponibilidade, pelo computador ou pelo aplicativo. Os encontros ao vivo são quinzenais.' },
-    { q: 'Já tenho formação na área. Ainda faz sentido?', a: 'A proposta da formação é aproximar a teoria das situações reais do cotidiano escolar, com foco em mediação, adaptação e apoio. Para quem já tem a base teórica, esse é justamente o ponto de aprofundamento.' },
-    { q: 'Vou receber certificado?', a: 'Sim. A formação oferece certificado de conclusão, conforme os requisitos da formação.' },
-    { q: 'Preciso assistir às aulas em horários específicos?', a: 'Não para as aulas gravadas, que ficam disponíveis para você assistir quando puder. Apenas os encontros ao vivo acontecem em datas definidas.' },
+    { q: 'Consigo conciliar com meu trabalho?', a: 'Sim. As aulas são gravadas e podem ser assistidas quando você puder, pelo computador ou pelo aplicativo. Só os encontros ao vivo, quinzenais, têm data marcada.' },
   ] as QA[],
 }
 
 export const faq = {
   heading: 'Perguntas frequentes',
   items: [
-    { q: 'Quem pode participar?', a: 'Profissionais de apoio, cuidadores escolares, auxiliares de classe, educadores, estudantes de licenciatura e demais profissionais interessados em Educação Especial.' },
-    { q: 'Qual é a carga horária?', a: '160 horas, distribuídas em 5 módulos.' },
-    { q: 'Como funcionam as aulas gravadas?', a: 'As aulas ficam disponíveis na plataforma e no aplicativo para você assistir de acordo com a sua disponibilidade.' },
+    { q: 'Já trabalho em escola. Essa formação também serve para mim?', a: 'Sim. Profissionais de apoio, cuidadores, auxiliares e educadores encontram aqui uma base estruturada para aproximar o que já sabem das situações do dia a dia.' },
+    { q: 'Já tenho formação na área. Ainda faz sentido?', a: 'A proposta da formação é aproximar a teoria das situações reais do cotidiano escolar, com foco em mediação, adaptação e apoio. Para quem já tem a base teórica, esse é justamente o ponto de aprofundamento.' },
     { q: 'Como funcionam os encontros ao vivo?', a: 'São encontros quinzenais para aprofundamento dos temas da formação.' },
-    { q: 'Como funciona o certificado?', a: 'Ao concluir a formação conforme os requisitos definidos, você recebe o certificado de conclusão.' },
-    { q: 'Quais são as formas de pagamento?', a: `${offer.price} à vista ou em até ${offer.installments}.` },
-    { q: 'Como funciona a garantia?', a: `Você tem ${offer.guaranteeDays} dias de garantia, nas condições definidas para a oferta.` },
+    { q: 'Vou receber certificado?', a: 'Sim. Ao concluir a formação conforme os requisitos definidos, você recebe o certificado de conclusão.' },
     { q: 'A formação aborda TEA?', a: 'Sim. O Módulo 02, Desenvolvimento Humano e Deficiências, aborda TEA e níveis de suporte.' },
+    { q: 'Quais são as formas de pagamento?', a: `${offer.price} à vista ou em até ${offer.installments}, no cartão, Pix ou boleto.` },
+    { q: 'Como funciona a garantia?', a: `Você tem ${offer.guaranteeDays} dias de garantia, nas condições definidas para a oferta.` },
   ] as QA[],
 }
 
@@ -306,7 +298,6 @@ export const closing = {
   ],
   emphasis: 'Você não precisa esperar estar diante do desafio para começar a se preparar.',
   invite: 'Comece agora sua jornada no Caminhos da Inclusão.',
-  summary: ['160h', '5 módulos', 'Aulas online', 'Encontros ao vivo', 'Certificado'],
   cta: 'Quero começar minha formação',
   guaranteeNote: `${offer.guaranteeDays} dias de garantia`,
 } as const
