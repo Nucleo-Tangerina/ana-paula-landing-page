@@ -34,6 +34,7 @@ export const nav = [
   { label: 'Sobre o curso', href: '#formacao' },
   { label: 'Conteúdo', href: '#conteudo' },
   { label: 'Para quem é', href: '#para-quem' },
+  { label: 'Depoimentos', href: '#depoimentos' },
   { label: 'FAQ', href: '#faq' },
 ] as const
 
@@ -52,7 +53,7 @@ export const hero = {
 // ---------- 04 Dor ----------
 
 export const pain = {
-  heading: 'Conhecer a teoria é diferente de saber o que fazer quando a situação acontece diante de você.',
+  heading: 'Conhecer a teoria é diferente de |saber o que fazer quando a situação acontece diante de você.',
   lede: 'Se você quer trabalhar com inclusão, talvez já tenha sentido isso.',
   items: [
     { question: 'Como devo agir?', voice: 'Tenho conhecimento, mas ainda me sinto inseguro diante de determinadas situações.' },
@@ -75,7 +76,7 @@ export const bigIdea = {
 // ---------- 06 Transformação ----------
 
 export const transformation = {
-  heading: 'Da insegurança para uma atuação mais preparada.',
+  heading: 'Da insegurança para uma |atuação mais preparada.',
   text: 'Não se trata apenas de concluir mais um curso. Trata-se de construir uma base para estar mais preparado quando alguém depender da sua atuação.',
   before: ['Não sei como agir.', 'Conhecimento fragmentado.', 'Teoria sem aplicação.', 'Insegurança na mediação.', 'Dúvidas sobre o papel profissional.'],
   after: [
@@ -99,7 +100,7 @@ export const solution = {
 // ---------- 08 Pilares ----------
 
 export const pillars = {
-  heading: 'Os 5 pilares da sua preparação.',
+  heading: 'Os 5 pilares da |sua preparação.',
   lede: 'Uma jornada completa, do fundamento à atuação.',
   items: [
     { title: 'Fundamentos', text: 'Entenda os princípios e a legislação que orientam a Educação Especial e Inclusiva.' },
@@ -114,7 +115,7 @@ export const pillars = {
 // ---------- 09 Benefícios ----------
 
 export const benefits = {
-  heading: 'Mais do que conteúdo: o que essa formação busca desenvolver em você.',
+  heading: 'Mais do que conteúdo: |o que essa formação busca desenvolver em você.',
   items: [
     { title: 'Segurança', text: 'Mais clareza para lidar com situações da rotina escolar.' },
     { title: 'Compreensão', text: 'Entender necessidades e particularidades dos alunos.' },
@@ -128,7 +129,7 @@ export const benefits = {
 // ---------- 10 Para quem é ----------
 
 export const audience = {
-  heading: 'Se você faz parte da Educação ou quer entrar nessa área, essa formação pode ser para você.',
+  heading: 'Se você faz parte da Educação ou quer entrar nessa área, |essa formação pode ser para você.',
   items: [
     'Profissional de apoio',
     'Cuidador escolar',
@@ -163,10 +164,47 @@ export const author = {
   },
 } as const
 
+// ---------- Vídeo (logo após a primeira dobra) ----------
+
+// Empty `src` keeps the slot as a placeholder; paste a YouTube/Vimeo embed URL to show the video.
+export const video = {
+  heading: 'Conheça a |formação por dentro.',
+  src: '',
+  title: 'Vídeo de apresentação do Caminhos da Inclusão',
+  soon: 'Vídeo em breve',
+} as const
+
+// ---------- 13 Depoimentos ----------
+
+// Transcribed from what students sent (WhatsApp / Instagram), lightly corrected for typos.
+export const testimonials = {
+  heading: 'Conhecimento que começa na formação |e chega à prática.',
+  lede: 'Experiências de quem já aprendeu com Ana Paula.',
+  items: [
+    {
+      quote:
+        'O curso foi uma experiência muito enriquecedora. Aprendi muito sobre educação especial e compreendi melhor a importância da inclusão, do respeito às diferenças e das estratégias que contribuem para o desenvolvimento de cada criança. Hoje, sinto que estou preparado para ajudar crianças a se desenvolverem, respeitando suas necessidades e potencialidades. Muito obrigado, Ana Paula, por dedicar seu tempo para nos ensinar e inspirar.',
+      name: 'Maycon Eliseu Couto',
+      source: 'Aluno da formação · via WhatsApp',
+    },
+    {
+      quote:
+        'Estou fazendo o curso e falo: aproveitem, porque é muito bom, nada cansativo, super dinâmico. Não vou falar mais pra todos ficarem curiosos e fazerem a sua matrícula.',
+      name: '@monique3173',
+      source: 'Aluna da formação · via Instagram',
+    },
+    {
+      quote: 'Curso ótimo e completo, amei!',
+      name: 'Aluna da formação',
+      source: 'via WhatsApp',
+    },
+  ],
+}
+
 // ---------- 14 Experiência de estudo ----------
 
 export const study = {
-  heading: 'Estude do seu jeito: uma formação completa que acompanha sua rotina.',
+  heading: 'Estude do seu jeito: |uma formação completa que acompanha sua rotina.',
   items: [
     { title: 'Aulas gravadas', text: 'Assista de acordo com sua disponibilidade.' },
     { title: 'Aplicativo', text: 'Leve sua formação com você.' },
@@ -179,7 +217,7 @@ export const study = {
 // ---------- 15 Conteúdo programático ----------
 
 export const curriculum = {
-  heading: 'Uma formação estruturada do fundamento à prática.',
+  heading: 'Uma formação estruturada |do fundamento à prática.',
   lede: 'Veja tudo o que você vai aprender.',
   modules: [
     { n: '01', title: 'Fundamentos e Legislação', hours: 30, text: 'História da Educação Especial e Inclusiva, marco legal e legislações apresentadas na formação.' },
@@ -193,7 +231,7 @@ export const curriculum = {
 // ---------- 16 Portfólio ----------
 
 export const portfolio = {
-  heading: 'Construa também seu portfólio profissional.',
+  heading: 'Construa também seu |portfólio profissional.',
   text: 'Durante a formação, você receberá direcionamento relacionado à construção do seu portfólio profissional.',
   // Kept to the PDF's own wording: what the portfolio guidance includes isn't specified.
 } as const
@@ -201,7 +239,7 @@ export const portfolio = {
 // ---------- 18 Oferta ----------
 
 export const offerBlock = {
-  heading: 'Sua inscrição no Caminhos da Inclusão inclui:',
+  heading: 'Sua inscrição no Caminhos da Inclusão |inclui:',
   includes: [
     'Formação completa de 160 horas',
     '5 módulos',
@@ -233,7 +271,7 @@ export const guarantee = {
 export type QA = { q: string; a: string }
 
 export const objections = {
-  heading: 'Ainda está em dúvida? Talvez uma dessas perguntas esteja passando pela sua cabeça.',
+  heading: 'Ainda está em dúvida? |Talvez uma dessas perguntas esteja passando pela sua cabeça.',
   items: [
     { q: 'Nunca trabalhei na área. Posso participar?', a: 'Sim. A formação começa pelos fundamentos da Educação Especial e foi pensada também para quem quer entrar na área e chegar à escola mais preparado.' },
     { q: 'Já trabalho em escola. Essa formação também serve para mim?', a: 'Sim. Profissionais de apoio, cuidadores, auxiliares e educadores encontram aqui uma base estruturada para aproximar o que já sabem das situações do dia a dia.' },
@@ -261,7 +299,7 @@ export const faq = {
 // ---------- 22 Fechamento ----------
 
 export const closing = {
-  heading: 'Quando chegar o momento de agir, você quer estar tentando descobrir o que fazer, ou quer estar mais preparado?',
+  heading: 'Quando chegar o momento de agir, você quer estar tentando descobrir o que fazer, |ou quer estar mais preparado?',
   text: [
     'A inclusão acontece todos os dias dentro das escolas.',
     'Cada situação pode exigir compreensão, responsabilidade, conhecimento e preparo.',

@@ -80,13 +80,21 @@
   --header-h: 72px;
 
   /* Shape */
-  --r-panel: 12px;
-  --r-button: 8px;
+  /* Premium pass: soft, generous rounding; buttons are pills. */
+  --r-panel: 20px;
+  --r-stage: clamp(24px, 2vw + 12px, 40px);
+  --r-button: 999px;
   --r-pill: 999px;
 
   /* Depth: offset + soft blur, ink-tinted */
-  --shadow-1: 0 1px 2px rgb(11 31 77 / 0.06), 0 4px 12px rgb(11 31 77 / 0.05);
-  --shadow-2: 0 2px 4px rgb(11 31 77 / 0.06), 0 16px 40px rgb(11 31 77 / 0.1);
+  --shadow-1: 0 2px 6px rgb(11 31 77 / 0.04), 0 12px 32px rgb(11 31 77 / 0.07);
+  --shadow-2: 0 4px 10px rgb(11 31 77 / 0.06), 0 24px 56px rgb(11 31 77 / 0.12);
+
+  /* Stage panels: the saturated rounded fields that carry key sections. */
+  --stage-purple: linear-gradient(135deg, #6b2fa6, #92278f 55%, #b02a8e);
+  --stage-blue: linear-gradient(135deg, #0b3f9c, #1f5fc4 60%, #27aae1);
+  --stage-magenta: linear-gradient(135deg, #c4006f, #e2337f 55%, #f58220);
+  --accent: #8a2387;
 
   /* Motion */
   --ease-snap: cubic-bezier(0.25, 1, 0.5, 1);

@@ -21,7 +21,7 @@ import {
   Users,
 } from 'lucide-react'
 import { transformation, solution, pillars, benefits, audience } from '../content'
-import { Button, Chip, Section } from '../components/ui'
+import { Button, Chip, Section, TwoTone } from '../components/ui'
 import { toneAt } from '../components/tones'
 import './Journey.css'
 
@@ -32,7 +32,7 @@ export function Transformation() {
     <Section className="shift" labelledBy="shift-title">
       <div className="shift__intro">
         <h2 id="shift-title" className="heading">
-          {transformation.heading}
+          <TwoTone text={transformation.heading} />
         </h2>
         <p className="lede">{transformation.text}</p>
       </div>
@@ -94,7 +94,7 @@ export function Pillars() {
   return (
     <Section className="pillars" labelledBy="pillars-title">
       <h2 id="pillars-title" className="heading">
-        {pillars.heading}
+        <TwoTone text={pillars.heading} />
       </h2>
       <p className="lede">{pillars.lede}</p>
 
@@ -121,7 +121,7 @@ export function Benefits() {
   return (
     <Section tone="paper" className="benefits" labelledBy="benefits-title">
       <h2 id="benefits-title" className="heading benefits__heading">
-        {benefits.heading}
+        <TwoTone text={benefits.heading} />
       </h2>
       <dl className="benefits__grid" data-reveal>
         {benefits.items.map((b, i) => (
@@ -144,7 +144,7 @@ export function Audience() {
     <Section id="para-quem" className="audience" labelledBy="audience-title">
       <div className="audience__grid">
         <h2 id="audience-title" className="heading audience__heading">
-          {audience.heading}
+          <TwoTone text={audience.heading} />
         </h2>
         <ul role="list" className="audience__list" data-reveal>
           {audience.items.map((a, i) => {

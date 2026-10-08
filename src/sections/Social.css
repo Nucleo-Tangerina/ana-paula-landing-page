@@ -1,0 +1,153 @@
+/* ---------- Vídeo ---------- */
+
+.video {
+  padding-block: var(--s-8);
+}
+
+.video__heading {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.video__frame {
+  position: relative;
+  margin: var(--s-6) auto 0;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-stage);
+  overflow: hidden;
+  background: var(--stage-blue);
+  box-shadow: 0 30px 70px -30px rgb(11 31 77 / 0.5);
+}
+
+.video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video__soon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--s-4);
+  color: #fff;
+}
+
+.video__soon::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  right: -25%;
+  top: -40%;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.14);
+}
+
+.video__play {
+  display: grid;
+  place-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  padding-left: 6px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--action);
+  box-shadow: 0 0 0 14px rgb(255 255 255 / 0.16), 0 20px 40px rgb(4 12 34 / 0.35);
+}
+
+.video__label {
+  font-size: var(--fs-small);
+  font-weight: var(--w-medium);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Depoimentos ---------- */
+
+.voices__head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  gap: var(--s-4) var(--s-7);
+  align-items: end;
+}
+
+.voices__lede {
+  color: rgb(255 255 255 / 0.85);
+  font-size: var(--fs-deck);
+}
+
+.voices__list {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--s-4);
+  margin-top: var(--s-7);
+  align-items: start;
+}
+
+.voices__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  padding: var(--s-6);
+  border-radius: var(--r-panel);
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 14px 36px rgb(60 0 30 / 0.25);
+}
+
+.voices__mark {
+  color: var(--action);
+}
+
+.voices__card blockquote p {
+  color: var(--ink);
+  font-family: var(--font-quote);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+.voices__card:first-child blockquote p {
+  font-size: var(--fs-deck);
+}
+
+.voices__who {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: auto;
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--hairline);
+  font-size: var(--fs-label);
+  line-height: 1.35;
+}
+
+.voices__who strong {
+  display: block;
+  color: var(--ink);
+  font-size: var(--fs-small);
+  font-weight: var(--w-medium);
+}
+
+.voices__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--stage-magenta);
+  color: #fff;
+  font-weight: var(--w-medium);
+}
+
+@media (max-width: 899px) {
+  .voices__head,
+  .voices__list {
+    grid-template-columns: 1fr;
+  }
+}

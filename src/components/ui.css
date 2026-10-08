@@ -6,7 +6,7 @@
   justify-content: center;
   gap: var(--s-2);
   min-height: 52px;
-  padding: 0.875rem 1.25rem 0.875rem 1.5rem;
+  padding: 0.875rem 1.5rem 0.875rem 1.75rem;
   border-radius: var(--r-button);
   border: 1px solid transparent;
   font-size: var(--fs-small);
@@ -32,13 +32,14 @@
 }
 
 .btn--primary {
-  background: var(--action);
+  background: linear-gradient(180deg, #e6198f, var(--action));
   color: #fff;
-  box-shadow: 0 1px 2px rgb(184 0 109 / 0.2), 0 8px 20px rgb(214 0 127 / 0.18);
+  box-shadow: 0 2px 4px rgb(184 0 109 / 0.2), 0 12px 28px rgb(214 0 127 / 0.32);
 }
 
 .btn--primary:hover {
   background: var(--action-hover);
+  box-shadow: 0 2px 4px rgb(184 0 109 / 0.2), 0 16px 36px rgb(214 0 127 / 0.4);
 }
 
 .btn--secondary {
@@ -144,4 +145,97 @@
 .tcard {
   border-radius: var(--r-panel);
   background: var(--tint);
+}
+
+/* ---------- Two-tone headings: the second beat in the accent ---------- */
+
+.accent {
+  color: var(--accent);
+}
+
+.band--lacquer .accent,
+.stage .accent {
+  color: #ffc4e6;
+}
+
+/* ---------- Stage: a saturated rounded field inside the rail ---------- */
+
+.band--stage {
+  background: var(--ground);
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 1rem + 4vw, 4.5rem);
+  border-radius: var(--r-stage);
+  color: rgb(255 255 255 / 0.86);
+  box-shadow: 0 30px 70px -30px rgb(11 31 77 / 0.45);
+}
+
+.stage :is(h2, h3) {
+  color: #fff;
+}
+
+.stage--purple { background: var(--stage-purple); }
+.stage--blue { background: var(--stage-blue); }
+.stage--magenta { background: var(--stage-magenta); }
+
+/* Large soft rings in the panel's corner: depth without decoration noise. */
+.stage::before,
+.stage::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgb(255 255 255 / 0.12);
+  pointer-events: none;
+}
+
+.stage::before {
+  width: 34rem;
+  height: 34rem;
+  right: -12rem;
+  top: -14rem;
+}
+
+.stage::after {
+  width: 22rem;
+  height: 22rem;
+  left: -9rem;
+  bottom: -11rem;
+  background: rgb(255 255 255 / 0.05);
+}
+
+.stage > * {
+  position: relative;
+}
+
+/* White pill rows on a stage. */
+.pills {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.pills li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-2) var(--s-5) var(--s-2) var(--s-2);
+  border-radius: var(--r-pill);
+  background: #fff;
+  color: var(--ink);
+  font-size: var(--fs-small);
+  box-shadow: 0 6px 18px rgb(11 31 77 / 0.12);
+}
+
+.pills .chip {
+  border-radius: 50%;
+}
+
+/* Phones: the stage keeps its colour but gives the content the width back. */
+@media (max-width: 600px) {
+  .stage {
+    padding: var(--s-6) var(--s-4);
+    margin-inline: calc(-1 * var(--s-2));
+  }
 }

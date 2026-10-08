@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Check, ShieldCheck, Lock, CreditCard, Plus } from 'lucide-react'
 import { offerBlock, offer, guarantee, objections, faq, closing, footer, type QA } from '../content'
-import { Button, Section } from '../components/ui'
+import { Button, Section, TwoTone } from '../components/ui'
 import { Wordmark } from './Header'
 import { Seal } from '../components/Seal'
 import { PayMethods } from '../components/PayMethods'
@@ -33,7 +33,7 @@ export function Offer() {
       <div className="offer__grid">
         <div>
           <h2 id="offer-title" className="offer__title">
-            {offerBlock.heading}
+            <TwoTone text={offerBlock.heading} />
           </h2>
           <ul role="list" className="offer__includes">
             {offerBlock.includes.map((i) => (
@@ -135,7 +135,7 @@ export function Objections() {
     <Section tone="paper" className="doubts" labelledBy="doubts-title">
       <div className="doubts__grid">
         <h2 id="doubts-title" className="heading doubts__heading">
-          {objections.heading}
+          <TwoTone text={objections.heading} />
         </h2>
         <Accordion items={objections.items} />
       </div>
@@ -158,9 +158,9 @@ export function Faq() {
 
 export function Closing() {
   return (
-    <Section className="closing" labelledBy="closing-title">
+    <Section stage="blue" className="closing" labelledBy="closing-title">
       <h2 id="closing-title" className="closing__title">
-        {closing.heading}
+        <TwoTone text={closing.heading} />
       </h2>
       <div className="closing__grid">
         <div>
