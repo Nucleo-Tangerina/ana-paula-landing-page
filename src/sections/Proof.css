@@ -179,10 +179,10 @@
 
 .modules__item summary {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr auto;
   grid-template-areas:
-    'n n icon'
-    'title hours icon';
+    'n icon'
+    'title icon';
   align-items: center;
   gap: var(--s-1) var(--s-5);
   padding-block: var(--s-5);
@@ -207,12 +207,6 @@
   font-weight: var(--w-medium);
   line-height: 1.25;
   letter-spacing: var(--track-heading);
-}
-
-.modules__hours {
-  grid-area: hours;
-  color: var(--ink);
-  font-size: var(--fs-deck);
 }
 
 .modules__icon {

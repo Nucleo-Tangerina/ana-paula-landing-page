@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React + Vite (escolha do usuário). Apenas frontend. Publicação: **Netlify**, como site estático (`npm run build` → `dist/`), configurado em `netlify.toml`. Variáveis de ambiente no `README.md`.
+React + Vite (escolha do usuário). Apenas frontend. Publicação: **VPS própria**, como site estático (`npm run build` → `dist/`) servido pelo servidor web. Variáveis de ambiente no `README.md`.
 
 ## Users
 
@@ -24,20 +24,20 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 ## Operating Context
 
-- O curso é vendido e entregue pela HeroSpark (checkout e área de membros), com aplicativo próprio.
+- O curso é vendido e entregue pela Ticto (checkout e área de membros), com aplicativo próprio.
 - Formato: aulas gravadas, encontros ao vivo quinzenais, acesso pelo aplicativo e certificado de conclusão.
-- Estrutura: 5 módulos.
-  - 01 Fundamentos e Legislação (30h)
-  - 02 Desenvolvimento Humano e Deficiências (40h)
-  - 03 Comunicação e Mediação (30h)
-  - 04 Adaptação Curricular e Prática de Relatório (30h)
-  - 05 Técnicas de Apoio e Vida Diária (20h)
-- Oferta atual: de R$199,99 por R$149,99, ou 12x de R$15,50. Apenas 60 vagas. Garantia de 30 dias.
+- Estrutura: 180 horas em 5 módulos (a página não mostra horas por módulo: as do PDF somavam 150h).
+  - 01 Fundamentos e Legislação
+  - 02 Desenvolvimento Humano e Deficiências
+  - 03 Comunicação e Mediação
+  - 04 Adaptação Curricular e Prática de Relatório
+  - 05 Técnicas de Apoio e Vida Diária
+- Oferta atual: R$197 à vista ou 12x de R$20,37 (conferido no checkout Ticto). Apenas 60 vagas. Garantia de 30 dias.
 - Há direcionamento para a construção de um portfólio profissional durante a formação (o escopo exato ainda será confirmado).
 
 ## Capabilities and Constraints
 
-- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido em `VITE_CHECKOUT_URL` no Netlify. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
+- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, https://payment.ticto.app/O15C67760 (pode ser sobrescrito por `VITE_CHECKOUT_URL`).
 - A copy de referência está em `PAG - ANA PAULA.pdf`, com 23 blocos na ordem final.
 - O material além das fotos não vai existir (decisão de 03/10/2026). A página foi adaptada a isso:
   - Saíram os os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.

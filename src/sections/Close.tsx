@@ -61,15 +61,12 @@ export function Offer() {
             <span>{offerBlock.seatsLabel}</span>
             <strong className="tabular">Apenas {offer.seats} vagas</strong>
           </p>
-          <p className="price__from">
-            De <s className="tabular">{offer.priceFrom}</s>
-          </p>
           <p className="price__now">
             <span className="price__lead">{offerBlock.priceLead}</span>
-            <strong className="tabular">{offer.price}</strong>
+            <strong className="tabular">{offer.installments}</strong>
           </p>
           <p className="price__installments">
-            {offerBlock.priceOr} <strong className="tabular">{offer.installments}</strong>
+            {offerBlock.priceOr} <strong className="tabular">{offer.price}</strong> à vista
           </p>
           <Button cta="oferta" className="price__cta">
             {offerBlock.cta}
@@ -175,9 +172,9 @@ export function Closing() {
         <div className="closing__buy">
           <p className="closing__invite">{closing.invite}</p>
           <p className="closing__price">
-            <strong className="tabular">{offer.price}</strong>
+            <strong className="tabular">{offer.installments}</strong>
             <span>
-              ou <span className="tabular">{offer.installments}</span>
+              ou <span className="tabular">{offer.price}</span> à vista
             </span>
           </p>
           <Button cta="fechamento" className="closing__cta">

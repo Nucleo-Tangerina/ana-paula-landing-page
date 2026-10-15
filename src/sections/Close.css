@@ -88,16 +88,12 @@
   font-size: var(--fs-small);
 }
 
-.price__from {
+.price__now {
+  display: grid;
+  gap: var(--s-1);
   margin-top: var(--s-3);
   padding-top: var(--s-5);
   border-top: 1px solid var(--hairline);
-  font-size: var(--fs-small);
-}
-
-.price__now {
-  display: grid;
-  margin-top: var(--s-2);
 }
 
 .price__lead {
@@ -108,7 +104,7 @@
 
 .price__now strong {
   color: var(--ink);
-  font-size: clamp(2.75rem, 2rem + 3vw, 4rem);
+  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.25rem);
   font-weight: var(--w-medium);
   line-height: 1;
   letter-spacing: -0.03em;

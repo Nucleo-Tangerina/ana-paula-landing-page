@@ -112,7 +112,6 @@ export function Curriculum() {
               <summary>
                 <span className="modules__n tabular">Módulo {m.n}</span>
                 <span className="modules__title">{m.title}</span>
-                <span className="modules__hours tabular">{m.hours}h</span>
                 <Plus className="modules__icon" size={20} strokeWidth={1.5} aria-hidden />
               </summary>
               <p>{m.text}</p>

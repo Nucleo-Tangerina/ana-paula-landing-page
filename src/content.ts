@@ -1,3 +1,12 @@
+import maycon from './assets/depoimentos/maycon.webp'
+import monique from './assets/depoimentos/monique.webp'
+import caroline from './assets/depoimentos/caroline.webp'
+import cursoOtimo from './assets/depoimentos/curso-otimo.webp'
+import videoA from './assets/depoimentos/video-04.mp4'
+import videoB from './assets/depoimentos/video-17.mp4'
+import videoC from './assets/depoimentos/video-31.mp4'
+import videoCapa from './assets/video-capa.webp'
+
 // All page copy, in block order (PAG - ANA PAULA.pdf, blocks 01–23).
 // The PDF's eyebrows are folded into each heading or `lede` (decision: option a).
 // A `lede` is an ordinary sentence set after (or leading into) its heading,
@@ -9,17 +18,17 @@ export const offer = {
   name: 'Caminhos da Inclusão',
   subtitle: 'Formação para Mediadores',
   org: 'Teia de Saberes',
-  hours: 160,
+  hours: 180,
   modules: 5,
-  priceFrom: 'R$199,99',
-  price: 'R$149,99',
-  installments: '12x de R$15,50',
+  price: 'R$197',
+  // Matches the Ticto checkout (12x card rate on R$197).
+  installments: '12x de R$20,37',
   seats: 60,
   guaranteeDays: 30,
 } as const
 
 export const facts = [
-  { value: '160h', label: 'de formação', detail: 'Formação completa' },
+  { value: '180h', label: 'de formação', detail: 'Formação completa' },
   { value: '5 módulos', label: 'estruturados', detail: 'Conteúdo estruturado' },
   { value: 'Aulas online', label: '+ aplicativo', detail: 'Estude no seu ritmo' },
   { value: 'Encontros ao vivo', label: 'quinzenais', detail: 'Aprofundamento' },
@@ -44,7 +53,7 @@ export const headerCta = 'Quero minha vaga'
 
 export const hero = {
   headline: ['Saiba como ', 'agir na prática', ' diante dos desafios reais da Educação Especial.'], // middle = emphasis
-  deck: 'Prepare-se para atuar na inclusão escolar com mais segurança, conhecimento e direcionamento no Caminhos da Inclusão, uma formação para mediadores de 160 horas criada por quem vive a Educação Especial na prática.',
+  deck: 'Prepare-se para atuar na inclusão escolar com mais segurança, conhecimento e direcionamento no Caminhos da Inclusão, uma formação para mediadores de 180 horas criada por quem vive a Educação Especial na prática.',
   cta: 'Quero me preparar para atuar na Educação Especial',
   secondary: 'Ver conteúdo',
   portraitCaption: { name: 'Ana Paula Jorge', role: 'Mestre e Doutoranda, professora da Rede Municipal' },
@@ -93,7 +102,7 @@ export const transformation = {
 export const solution = {
   heading: offer.name,
   subheading: offer.subtitle,
-  text: 'Uma jornada de 160 horas criada para profissionais que desejam compreender os fundamentos da Educação Especial e aproximar esse conhecimento das situações encontradas no cotidiano escolar.',
+  text: 'Uma jornada de 180 horas criada para profissionais que desejam compreender os fundamentos da Educação Especial e aproximar esse conhecimento das situações encontradas no cotidiano escolar.',
   method: ['Conhecer', 'Compreender', 'Aplicar', 'Atuar'],
 } as const
 
@@ -166,34 +175,29 @@ export const author = {
 
 // ---------- Vídeo (logo após a primeira dobra) ----------
 
-// Empty `src` keeps the slot as a placeholder; paste a YouTube/Vimeo embed URL to show the video.
 export const video = {
   heading: 'Conheça a formação por dentro.',
-  src: '',
+  // rel=0 keeps end-screen suggestions to this channel.
+  src: 'https://www.youtube.com/embed/32yt_vrxjFU?rel=0',
+  // Our own cover hides YouTube's title/channel bar until someone presses play.
+  poster: videoCapa,
   title: 'Vídeo de apresentação do Caminhos da Inclusão',
-  soon: 'Vídeo em breve',
 } as const
 
 // ---------- 13 Depoimentos ----------
 
-// Transcribed from what students sent (WhatsApp / Instagram), lightly corrected for typos.
+// Real prints (student phone numbers cropped out) and videos sent by students.
 export const testimonials = {
   heading: 'Conhecimento que começa na formação e chega à prática.',
   lede: 'Alunos do Caminhos da Inclusão contam como foi a formação.',
-  items: [
-    {
-      quote:
-        'O curso foi uma experiência muito enriquecedora. Aprendi muito sobre educação especial e compreendi melhor a importância da inclusão, do respeito às diferenças e das estratégias que contribuem para o desenvolvimento de cada criança. Hoje, sinto que estou preparado para ajudar crianças a se desenvolverem, respeitando suas necessidades e potencialidades. Muito obrigado, Ana Paula, por dedicar seu tempo para nos ensinar e inspirar.',
-      name: 'Maycon Eliseu Couto',
-      source: 'Aluno da formação · via WhatsApp',
-    },
-    {
-      quote:
-        'Estou fazendo o curso e falo: aproveitem, porque é muito bom, nada cansativo, super dinâmico. Não vou falar mais pra todos ficarem curiosos e fazerem a sua matrícula.',
-      name: '@monique3173',
-      source: 'Aluna da formação · via Instagram',
-    },
+  videosLabel: 'Depoimentos em vídeo',
+  prints: [
+    { src: maycon, alt: 'Print de WhatsApp: Maycon Eliseu Couto conta que o curso foi uma experiência muito enriquecedora e que hoje se sente preparado para ajudar crianças a se desenvolverem.', width: 578, height: 500 },
+    { src: monique, alt: 'Print de comentário no Instagram de @monique3173: "Estou fazendo o curso e falo, aproveitem porque é muito bom, nada cansativo, super dinâmico."', width: 590, height: 310 },
+    { src: caroline, alt: 'Print de comentário no Instagram de @caroline.stefani.58910: "Esse atende o novo decreto que exige curso mínimo de 180 horas, compre, o curso é maravilhoso."', width: 590, height: 273 },
+    { src: cursoOtimo, alt: 'Print de WhatsApp: aluna escreve "Curso ótimo e completo, amei".', width: 840, height: 114 },
   ],
+  videos: [videoA, videoB, videoC],
 }
 
 // ---------- 14 Experiência de estudo ----------
@@ -204,7 +208,7 @@ export const study = {
     { title: 'Aulas gravadas', text: 'Assista de acordo com sua disponibilidade.' },
     { title: 'Aplicativo', text: 'Leve sua formação com você.' },
     { title: 'Encontros ao vivo', text: 'Encontros quinzenais para aprofundamento.' },
-    { title: '160 horas', text: 'Uma formação completa e estruturada.' },
+    { title: '180 horas', text: 'Uma formação completa e estruturada.' },
     { title: 'Certificado', text: 'Certificação conforme os requisitos da formação.' },
   ],
 } as const
@@ -215,11 +219,11 @@ export const curriculum = {
   heading: 'Uma formação estruturada do fundamento à prática.',
   lede: 'Veja tudo o que você vai aprender.',
   modules: [
-    { n: '01', title: 'Fundamentos e Legislação', hours: 30, text: 'História da Educação Especial e Inclusiva, marco legal e legislações apresentadas na formação.' },
-    { n: '02', title: 'Desenvolvimento Humano e Deficiências', hours: 40, text: 'Desenvolvimento humano, deficiência intelectual, transtornos de aprendizagem, TEA, níveis de suporte e comportamento.' },
-    { n: '03', title: 'Comunicação e Mediação', hours: 30, text: 'Libras, Braille, CAA, mediação de conflitos, socialização e atividades.' },
-    { n: '04', title: 'Adaptação Curricular e Prática de Relatório', hours: 30, text: 'Adaptação de materiais, estratégias, vivências, observação e relatório.' },
-    { n: '05', title: 'Técnicas de Apoio e Vida Diária', hours: 20, text: 'Higiene, alimentação, locomoção e demais aspectos apresentados no programa.' },
+    { n: '01', title: 'Fundamentos e Legislação', text: 'História da Educação Especial e Inclusiva, marco legal e legislações apresentadas na formação.' },
+    { n: '02', title: 'Desenvolvimento Humano e Deficiências', text: 'Desenvolvimento humano, deficiência intelectual, transtornos de aprendizagem, TEA, níveis de suporte e comportamento.' },
+    { n: '03', title: 'Comunicação e Mediação', text: 'Libras, Braille, CAA, mediação de conflitos, socialização e atividades.' },
+    { n: '04', title: 'Adaptação Curricular e Prática de Relatório', text: 'Adaptação de materiais, estratégias, vivências, observação e relatório.' },
+    { n: '05', title: 'Técnicas de Apoio e Vida Diária', text: 'Higiene, alimentação, locomoção e demais aspectos apresentados no programa.' },
   ],
 } as const
 
@@ -236,7 +240,7 @@ export const portfolio = {
 export const offerBlock = {
   heading: 'Sua inscrição no Caminhos da Inclusão inclui:',
   includes: [
-    'Formação completa de 160 horas',
+    'Formação completa de 180 horas',
     '5 módulos',
     'Aulas gravadas',
     'Acesso pelo aplicativo',
