@@ -82,9 +82,10 @@
 
 .hero__portrait {
   position: relative;
-  justify-self: center;
-  width: min(100%, 31rem);
-  margin: 0;
+  /* She is the hero: larger than her column, reaching past it toward the edge. */
+  justify-self: end;
+  width: min(128%, 44rem);
+  margin: 0 calc(-1 * var(--s-6)) 0 0;
 }
 
 /* A cut-out portrait standing in the light, no frame: the thread passes behind her
@@ -92,7 +93,6 @@
 .hero__portrait img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 24px 40px rgb(11 31 77 / 0.14));
   /* the table is cropped square at both sides: fade its ends, leave the figure whole */
   -webkit-mask:
     linear-gradient(#000, #000) top / 100% 69% no-repeat,
@@ -104,8 +104,8 @@
 
 .hero__caption {
   position: absolute;
-  left: calc(-1 * var(--s-6));
-  bottom: var(--s-7);
+  right: var(--s-7);
+  bottom: var(--s-5);
   display: grid;
   gap: 2px;
   max-width: 15rem;
@@ -136,7 +136,10 @@
 
 .facts__item {
   display: grid;
-  gap: 2px;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--s-3);
+  row-gap: 2px;
+  align-items: center;
   padding: var(--s-4) var(--s-5);
 }
 
@@ -148,6 +151,10 @@
   color: var(--ink);
   font-weight: var(--w-medium);
   font-size: var(--fs-small);
+}
+
+.facts__item .chip {
+  grid-row: span 2;
 }
 
 .facts__detail {
@@ -187,31 +194,44 @@
   }
 
   .hero__portrait {
-    width: min(78%, 22rem);
+    justify-self: center;
+    width: min(100%, 26rem);
+    margin: 0;
   }
 
   /* Left of the portrait on phones: the right side belongs to the thread's taper. */
   .hero__caption {
-    left: calc(-1 * var(--s-4));
-    bottom: var(--s-5);
+    left: 0;
+    right: auto;
+    bottom: var(--s-4);
   }
 
-  /* A ruled list, value left and detail right: rows, not tiles. */
+  /* Phones: the five facts become coloured tiles, two per row. */
   .facts {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--s-2);
+    border: 0;
     background: transparent;
   }
 
-  .facts__item {
-    grid-template-columns: 1fr auto;
-    align-items: baseline;
-    padding: var(--s-3) 0;
-    background: var(--ground);
+  .facts__item,
+  .facts__item + .facts__item {
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: var(--s-3);
+    border: 0;
+    border-radius: var(--r-panel);
+    background: var(--tint);
   }
 
-  .facts__item + .facts__item {
-    border-left: 0;
-    border-top: 1px solid var(--hairline);
+  .facts__item .chip {
+    grid-row: auto;
+    margin-bottom: var(--s-2);
+    background: var(--paper);
+  }
+
+  .facts__item:last-child {
+    grid-column: 1 / -1;
   }
 }
 

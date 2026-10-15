@@ -52,7 +52,7 @@ Entregável: o direction contract aprovado por você.
    - citação da Ana Paula (bloco 12): renderiza só depois da aprovação, ou sem atribuição direta;
    - portfólio (bloco 16): texto mínimo do copy, sem expandir a promessa;
    - FAQ e objeções (blocos 20 e 21): eu escrevo respostas-rascunho conservadoras com base no copy;
-   - garantia (bloco 19): texto genérico do copy até os termos HeroSpark chegarem;
+   - garantia (bloco 19): texto genérico do copy até os termos da Ticto chegarem;
    - credencial UENF: fora até ser confirmada.
 3. Em modo dev, um selo visual "[CONFIRMAR]" aparece nos itens não confirmados. Em produção, eles somem ou ficam ocultos.
 4. Preço, parcelamento, vagas e carga horária ficam definidos uma única vez e são reutilizados nos blocos 02, 03, 18 e 22.
@@ -154,19 +154,20 @@ Assets faltando (logo, fotos, prints, depoimentos) usam `Placeholder` com a prop
 - [ ] Logo Teia (SVG, versões colorida e branca)
 - [ ] Fotos da Ana Paula: hero, autoridade e, se houver, fechamento
 - [ ] Fotos de inclusão/escola (blocos 04 e 22): próprias ou de banco com licença
-- [ ] Prints da plataforma e do app HeroSpark (blocos 07 e 14)
+- [ ] Prints da plataforma e do app Ticto (blocos 07 e 14)
 - [ ] 3 depoimentos reais (texto, nome, profissão, foto, autorização)
-- [ ] Link de checkout HeroSpark → `VITE_CHECKOUT_URL`
+- [x] Link de checkout Ticto (`src/config.ts`)
 - [ ] IDs do Meta Pixel e do GTM/GA4
 - [ ] Ana Paula aprovar a citação (bloco 12) e a bio
 - [ ] Confirmar o escopo do portfólio (bloco 16)
 - [ ] Decidir sobre os bônus: criar e aprovar, ou manter ocultos
 - [ ] Revisar as respostas do FAQ e das objeções
-- [ ] Termos exatos da garantia na HeroSpark
+- [ ] Termos exatos da garantia na Ticto
 - [ ] Preço, parcelamento e vagas ainda vigentes
 - [ ] Termos de Uso, Política de Privacidade, contato, CNPJ/razão social
 - [ ] Banner de cookies/LGPD, se usar pixel
-- [ ] Escolher a hospedagem e o domínio
+- [x] Hospedagem: VPS própria
+- [ ] Domínio
 
 ---
 

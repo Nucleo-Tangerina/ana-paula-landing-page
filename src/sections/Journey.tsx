@@ -1,6 +1,28 @@
-import { Check, Minus, HandHeart, HeartHandshake, School, Presentation, BookOpen, Accessibility } from 'lucide-react'
+import type React from 'react'
+import {
+  Check,
+  Minus,
+  HandHeart,
+  HeartHandshake,
+  School,
+  Presentation,
+  BookOpen,
+  Accessibility,
+  Scale,
+  Brain,
+  MessagesSquare,
+  Puzzle,
+  HandHelping,
+  ShieldCheck,
+  Lightbulb,
+  Compass,
+  Sprout,
+  Target,
+  Users,
+} from 'lucide-react'
 import { transformation, solution, pillars, benefits, audience } from '../content'
-import { Button, Section } from '../components/ui'
+import { Button, Chip, Section, TwoTone } from '../components/ui'
+import { toneAt } from '../components/tones'
 import './Journey.css'
 
 // Blocks 06–10: from the shift the visitor wants to the course that makes it.
@@ -10,7 +32,7 @@ export function Transformation() {
     <Section className="shift" labelledBy="shift-title">
       <div className="shift__intro">
         <h2 id="shift-title" className="heading">
-          {transformation.heading}
+          <TwoTone text={transformation.heading} />
         </h2>
         <p className="lede">{transformation.text}</p>
       </div>
@@ -66,17 +88,20 @@ export function Solution() {
   )
 }
 
+const PILLAR_ICONS = [Scale, Brain, MessagesSquare, Puzzle, HandHelping]
+
 export function Pillars() {
   return (
     <Section className="pillars" labelledBy="pillars-title">
       <h2 id="pillars-title" className="heading">
-        {pillars.heading}
+        <TwoTone text={pillars.heading} />
       </h2>
       <p className="lede">{pillars.lede}</p>
 
       <ol className="pillars__row" data-reveal>
-        {pillars.items.map((p) => (
-          <li key={p.title} className="pillars__item">
+        {pillars.items.map((p, i) => (
+          <li key={p.title} className={`pillars__item tone-${toneAt(i)}`}>
+            <Chip icon={PILLAR_ICONS[i]} />
             <h3 className="pillars__title">{p.title}</h3>
             <p>{p.text}</p>
           </li>
@@ -90,15 +115,18 @@ export function Pillars() {
   )
 }
 
+const BENEFIT_ICONS = [ShieldCheck, Lightbulb, Users, Target, Compass, Sprout]
+
 export function Benefits() {
   return (
     <Section tone="paper" className="benefits" labelledBy="benefits-title">
       <h2 id="benefits-title" className="heading benefits__heading">
-        {benefits.heading}
+        <TwoTone text={benefits.heading} />
       </h2>
       <dl className="benefits__grid" data-reveal>
-        {benefits.items.map((b) => (
-          <div key={b.title} className="benefits__item">
+        {benefits.items.map((b, i) => (
+          <div key={b.title} className={`benefits__item tone-${toneAt(i)}`} style={{ '--i': i } as React.CSSProperties}>
+            <Chip icon={BENEFIT_ICONS[i]} />
             <dt>{b.title}</dt>
             <dd>{b.text}</dd>
           </div>
@@ -116,14 +144,14 @@ export function Audience() {
     <Section id="para-quem" className="audience" labelledBy="audience-title">
       <div className="audience__grid">
         <h2 id="audience-title" className="heading audience__heading">
-          {audience.heading}
+          <TwoTone text={audience.heading} />
         </h2>
         <ul role="list" className="audience__list" data-reveal>
           {audience.items.map((a, i) => {
             const Icon = AUDIENCE_ICONS[i]
             return (
-              <li key={a}>
-                <Icon size={22} strokeWidth={1.5} aria-hidden />
+              <li key={a} className={`tone-${toneAt(i)}`}>
+                <Chip icon={Icon} size="sm" />
                 {a}
               </li>
             )

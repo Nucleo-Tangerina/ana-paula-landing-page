@@ -61,6 +61,19 @@
   font-weight: var(--w-medium);
 }
 
+.price__seal {
+  position: absolute;
+  top: calc(-1 * var(--s-7));
+  right: calc(-1 * var(--s-5));
+  width: 7.5rem;
+  height: auto;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 10px 30px rgb(4 12 34 / 0.35);
+  transform: rotate(8deg);
+}
+
 .price__name {
   color: var(--ink);
   font-weight: var(--w-medium);
@@ -75,16 +88,12 @@
   font-size: var(--fs-small);
 }
 
-.price__from {
+.price__now {
+  display: grid;
+  gap: var(--s-1);
   margin-top: var(--s-3);
   padding-top: var(--s-5);
   border-top: 1px solid var(--hairline);
-  font-size: var(--fs-small);
-}
-
-.price__now {
-  display: grid;
-  margin-top: var(--s-2);
 }
 
 .price__lead {
@@ -95,7 +104,7 @@
 
 .price__now strong {
   color: var(--ink);
-  font-size: clamp(2.75rem, 2rem + 3vw, 4rem);
+  font-size: clamp(2.25rem, 1.6rem + 2.4vw, 3.25rem);
   font-weight: var(--w-medium);
   line-height: 1;
   letter-spacing: -0.03em;
@@ -311,6 +320,28 @@
   color: var(--text-muted);
 }
 
+/* Closing on a blue stage: copy in white, the purchase in a white card. */
+.closing .closing__grid {
+  border-top-color: rgb(255 255 255 / 0.2);
+  align-items: start;
+}
+
+.closing .closing__text {
+  color: rgb(255 255 255 / 0.85);
+}
+
+.closing .closing__emphasis {
+  color: #fff;
+}
+
+.closing__buy {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  border-radius: var(--r-panel);
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 24px 50px -20px rgb(4 12 34 / 0.5);
+}
+
 /* ---------- 23 Rodapé ---------- */
 
 .footer {
@@ -345,6 +376,8 @@
 }
 
 .footer__links a {
+  display: inline-block;
+  padding-block: 12px;
   color: var(--on-lacquer);
   text-decoration: none;
 }
@@ -380,4 +413,16 @@
   .guarantee__panel {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 600px) {
+  .price__seal {
+    top: calc(-1 * var(--s-6));
+    right: var(--s-3);
+    width: 5.25rem;
+  }
+}
+
+.footer .wordmark__logo {
+  height: 3.25rem;
 }

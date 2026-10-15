@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-React + Vite (escolha do usuário). Apenas frontend. Publicação: **Netlify**, como site estático (`npm run build` → `dist/`), configurado em `netlify.toml`. Variáveis de ambiente no `README.md`.
+React + Vite (escolha do usuário). Apenas frontend. Publicação: **VPS própria**, como site estático (`npm run build` → `dist/`) servido pelo servidor web. Variáveis de ambiente no `README.md`.
 
 ## Users
 
@@ -24,23 +24,23 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 
 ## Operating Context
 
-- O curso é vendido e entregue pela HeroSpark (checkout e área de membros), com aplicativo próprio.
+- O curso é vendido e entregue pela Ticto (checkout e área de membros), com aplicativo próprio.
 - Formato: aulas gravadas, encontros ao vivo quinzenais, acesso pelo aplicativo e certificado de conclusão.
-- Estrutura: 5 módulos.
-  - 01 Fundamentos e Legislação (30h)
-  - 02 Desenvolvimento Humano e Deficiências (40h)
-  - 03 Comunicação e Mediação (30h)
-  - 04 Adaptação Curricular e Prática de Relatório (30h)
-  - 05 Técnicas de Apoio e Vida Diária (20h)
-- Oferta atual: de R$199,99 por R$149,99, ou 12x de R$15,50. Apenas 60 vagas. Garantia de 30 dias.
+- Estrutura: 180 horas em 5 módulos (a página não mostra horas por módulo: as do PDF somavam 150h).
+  - 01 Fundamentos e Legislação
+  - 02 Desenvolvimento Humano e Deficiências
+  - 03 Comunicação e Mediação
+  - 04 Adaptação Curricular e Prática de Relatório
+  - 05 Técnicas de Apoio e Vida Diária
+- Oferta atual: R$197 à vista ou 12x de R$20,37 (conferido no checkout Ticto). Apenas 60 vagas. Garantia de 30 dias.
 - Há direcionamento para a construção de um portfólio profissional durante a formação (o escopo exato ainda será confirmado).
 
 ## Capabilities and Constraints
 
-- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, definido em `VITE_CHECKOUT_URL` no Netlify. Ainda não há link; enquanto ele estiver vazio, os botões rolam até a oferta.
+- Apenas frontend: não há backend, formulários ou pagamento na página. Todos os CTAs apontam para um único link de checkout, https://payment.ticto.app/O15C67760 (pode ser sobrescrito por `VITE_CHECKOUT_URL`).
 - A copy de referência está em `PAG - ANA PAULA.pdf`, com 23 blocos na ordem final.
 - O material além das fotos não vai existir (decisão de 03/10/2026). A página foi adaptada a isso:
-  - Saíram os depoimentos, os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
+  - Saíram os os bônus (que eram só sugestões), os links legais, o CNPJ e os mockups da plataforma.
   - A citação "Não queremos entregar apenas teoria…" é assinada pelo curso, não pela Ana Paula.
   - O FAQ e as objeções mostram apenas respostas que o próprio copy sustenta. As perguntas sem resposta foram retiradas: tempo de acesso, gravação dos encontros, requisitos do certificado e funcionamento do aplicativo.
   - O portfólio fica restrito à frase do copy.
@@ -62,7 +62,7 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
   - Originais e recortes em `assets-src/`.
   - Versões otimizadas: a de blazer magenta em `src/assets/ana-hero.webp`, no hero; o retrato com fundo de tijolos em `src/assets/ana-autora.webp`, no bloco de autoridade.
   - `public/og.jpg` é um recorte da foto do blazer.
-- **Não há e não haverá:** logo (a marca aparece como texto "Teia de Saberes"), prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
+- **Não há e não haverá:** prints da plataforma ou do app, depoimentos, textos legais e CNPJ. Nada disso pode ser inventado.
 
 ## Product Principles
 
@@ -74,3 +74,9 @@ A ideia central da campanha: existe uma diferença entre *saber sobre inclusão*
 ## Accessibility & Inclusion
 
 O público é de Educação Especial, então a acessibilidade da página faz parte da credibilidade: WCAG 2.1 AA, HTML semântico, navegação completa por teclado nos accordions, no carrossel e no menu, `prefers-reduced-motion` respeitado e texto alternativo descritivo em todas as fotos.
+
+- **Logo:** `assets-src/teia-logo.png` (colorido, no cabeçalho) e `assets-src/teia-logo-branca.png` (rodapé); o símbolo sozinho vira o favicon.
+- **Depoimentos (confirmados pelo usuário em 07/10/2026 como reais, desta formação e autorizados):**
+  - Maycon Eliseu Couto, pelo WhatsApp;
+  - @monique3173, pelo Instagram.
+  - Ficaram de fora: o depoimento anônimo, e o comentário que cita um "decreto de 180 horas" (afirmação incorreta, porque o curso tem 160h).

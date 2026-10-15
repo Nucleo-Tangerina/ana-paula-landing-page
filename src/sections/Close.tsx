@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 import { Check, ShieldCheck, Lock, CreditCard, Plus } from 'lucide-react'
 import { offerBlock, offer, guarantee, objections, faq, closing, footer, type QA } from '../content'
-import { Button, Section } from '../components/ui'
+import { Button, Section, TwoTone } from '../components/ui'
 import { Wordmark } from './Header'
 import { Seal } from '../components/Seal'
+import { PayMethods } from '../components/PayMethods'
 import { track } from '../track'
 import './Close.css'
 
@@ -32,7 +33,7 @@ export function Offer() {
       <div className="offer__grid">
         <div>
           <h2 id="offer-title" className="offer__title">
-            {offerBlock.heading}
+            <TwoTone text={offerBlock.heading} />
           </h2>
           <ul role="list" className="offer__includes">
             {offerBlock.includes.map((i) => (
@@ -45,6 +46,13 @@ export function Offer() {
         </div>
 
         <div className="price" ref={card}>
+          {/* Authority seal: facts of the offer only, struck like the guarantee's. */}
+          <Seal
+            className="price__seal"
+            figure={`${offer.hours}h`}
+            unit="CERTIFICADO"
+            ring="FORMAÇÃO COMPLETA · CERTIFICADO DE CONCLUSÃO · "
+          />
           <p className="price__name">
             {offer.name}
             <span>{offer.subtitle}</span>
@@ -53,15 +61,12 @@ export function Offer() {
             <span>{offerBlock.seatsLabel}</span>
             <strong className="tabular">Apenas {offer.seats} vagas</strong>
           </p>
-          <p className="price__from">
-            De <s className="tabular">{offer.priceFrom}</s>
-          </p>
           <p className="price__now">
             <span className="price__lead">{offerBlock.priceLead}</span>
-            <strong className="tabular">{offer.price}</strong>
+            <strong className="tabular">{offer.installments}</strong>
           </p>
           <p className="price__installments">
-            {offerBlock.priceOr} <strong className="tabular">{offer.installments}</strong>
+            {offerBlock.priceOr} <strong className="tabular">{offer.price}</strong> à vista
           </p>
           <Button cta="oferta" className="price__cta">
             {offerBlock.cta}
@@ -77,6 +82,7 @@ export function Offer() {
               )
             })}
           </ul>
+          <PayMethods />
         </div>
       </div>
     </Section>
@@ -123,10 +129,10 @@ function Accordion({ items }: { items: QA[] }) {
 
 export function Objections() {
   return (
-    <Section tone="paper" className="doubts" labelledBy="doubts-title">
+    <Section tone="paper" className="doubts doubts--pre" labelledBy="doubts-title">
       <div className="doubts__grid">
         <h2 id="doubts-title" className="heading doubts__heading">
-          {objections.heading}
+          <TwoTone text={objections.heading} />
         </h2>
         <Accordion items={objections.items} />
       </div>
@@ -149,9 +155,9 @@ export function Faq() {
 
 export function Closing() {
   return (
-    <Section className="closing" labelledBy="closing-title">
+    <Section stage="blue" className="closing" labelledBy="closing-title">
       <h2 id="closing-title" className="closing__title">
-        {closing.heading}
+        <TwoTone text={closing.heading} />
       </h2>
       <div className="closing__grid">
         <div>
@@ -165,15 +171,10 @@ export function Closing() {
 
         <div className="closing__buy">
           <p className="closing__invite">{closing.invite}</p>
-          <ul role="list" className="closing__summary">
-            {closing.summary.map((s) => (
-              <li key={s}>{s}</li>
-            ))}
-          </ul>
           <p className="closing__price">
-            <strong className="tabular">{offer.price}</strong>
+            <strong className="tabular">{offer.installments}</strong>
             <span>
-              ou <span className="tabular">{offer.installments}</span>
+              ou <span className="tabular">{offer.price}</span> à vista
             </span>
           </p>
           <Button cta="fechamento" className="closing__cta">

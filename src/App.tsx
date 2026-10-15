@@ -6,7 +6,8 @@ import { Hero } from './sections/Hero'
 import { Pain } from './sections/Pain'
 import { BigIdea } from './sections/BigIdea'
 import { Transformation, Solution, Pillars, Benefits, Audience } from './sections/Journey'
-import { Author, Study, Curriculum, Portfolio } from './sections/Proof'
+import { Author, Study, Curriculum } from './sections/Proof'
+import { Video, Testimonials } from './sections/Social'
 import { Offer, Guarantee, Objections, Faq, Closing, Footer } from './sections/Close'
 
 // Sections in block order (PAG - ANA PAULA.pdf, 01–23). Block 03 lives in Hero.
@@ -21,6 +22,7 @@ export default function App() {
       <Header />
       <main id="conteudo-principal" className="page" ref={main}>
         <Hero />
+        <Video />
         <Pain />
         <BigIdea />
         <Transformation />
@@ -29,12 +31,12 @@ export default function App() {
         <Benefits />
         <Audience />
         <Author />
+        <Testimonials />
         <Study />
         <Curriculum />
-        <Portfolio />
+        <Objections />
         <Offer />
         <Guarantee />
-        <Objections />
         <Faq />
         <Closing />
         <PageThread />

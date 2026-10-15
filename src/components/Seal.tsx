@@ -30,7 +30,15 @@ export function Seal({ figure, unit, ring, className = '' }: { figure: string; u
       <text x="100" y="108" textAnchor="middle" fill="currentColor" fontSize="46" fontWeight="500" letterSpacing="-1.5">
         {figure}
       </text>
-      <text x="100" y="128" textAnchor="middle" fill="currentColor" fontSize="10" letterSpacing="3" fontWeight="500">
+      <text
+        x="100"
+        y="128"
+        textAnchor="middle"
+        fill="currentColor"
+        fontSize={unit.length > 6 ? 7.5 : 10}
+        letterSpacing={unit.length > 6 ? 1.5 : 3}
+        fontWeight="500"
+      >
         {unit}
       </text>
     </svg>

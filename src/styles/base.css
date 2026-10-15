@@ -147,3 +147,10 @@ ol[role='list'] {
 .page {
   position: relative;
 }
+
+@media print {
+  .reveal-wait {
+    opacity: 1;
+    transform: none;
+  }
+}

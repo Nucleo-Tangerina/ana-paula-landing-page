@@ -1,11 +1,13 @@
-import { Lock, ShieldCheck, CreditCard } from 'lucide-react'
+import { Lock, ShieldCheck, CreditCard, Clock, Layers, MonitorPlay, Video, Award } from 'lucide-react'
 import { hero, facts, trust } from '../content'
-import { Button } from '../components/ui'
+import { Button, Chip } from '../components/ui'
+import { toneAt } from '../components/tones'
 import retrato from '../assets/ana-hero.webp'
 import { Thread } from '../components/Thread'
 import './Hero.css'
 
 const TRUST_ICONS = [Lock, ShieldCheck, CreditCard]
+const FACT_ICONS = [Clock, Layers, MonitorPlay, Video, Award]
 
 export function Hero() {
   const [before, emphasis, after] = hero.headline
@@ -61,8 +63,9 @@ export function Hero() {
 
       <div className="rail">
         <ul role="list" className="facts" aria-label="A formação em números">
-          {facts.map((f) => (
-            <li key={f.value} className="facts__item">
+          {facts.map((f, i) => (
+            <li key={f.value} className={`facts__item tone-${toneAt(i)}`}>
+              <Chip icon={FACT_ICONS[i]} size="sm" />
               <span className="facts__value">{f.value}</span>
               <span className="facts__detail">{f.detail}</span>
             </li>

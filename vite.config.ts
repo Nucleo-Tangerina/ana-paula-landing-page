@@ -1,11 +1,11 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-
-// Absolute URLs in index.html (og:*) read this. On Netlify it falls back to the
-// site's own URL, which Netlify exposes to every build as URL.
-process.env.VITE_SITE_URL ??= process.env.URL ?? ''
+import { defineConfig, loadEnv } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ command, mode }) => {
+  // og:* tags in index.html need an absolute URL, or the WhatsApp preview breaks.
+  if (command === 'build' && !loadEnv(mode, process.cwd()).VITE_SITE_URL) {
+    throw new Error('VITE_SITE_URL is missing: set it in .env.production (see README).')
+  }
+  return { plugins: [react()] }
 })

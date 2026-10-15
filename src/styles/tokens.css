@@ -28,8 +28,22 @@
   --thread-magenta: #ec008c;
   --thread: linear-gradient(115deg, var(--thread-cyan), var(--thread-purple) 55%, var(--thread-magenta));
 
-  /* Type: one face, two weights */
+  /* Teia tones: the logo's colours, for icon chips and tinted cards. Each pairs a
+     deep ink (icons, 3:1+ on its tint) with a soft tint (card ground). */
+  --tone-cyan: #0a7fb3;
+  --tint-cyan: #e6f5fc;
+  --tone-purple: #8a2387;
+  --tint-purple: #f5e9f5;
+  --tone-magenta: #c4006f;
+  --tint-magenta: #fde9f3;
+  --tone-green: #3b7d1c;
+  --tint-green: #edf6e6;
+  --tone-orange: #b65500;
+  --tint-orange: #fef0e2;
+
+  /* Type: one face, two weights; a serif voice only for quotations */
   --font: 'Lexend Variable', system-ui, sans-serif;
+  --font-quote: 'Young Serif', Georgia, serif;
   --w-regular: 400;
   --w-medium: 500;
 
@@ -66,13 +80,21 @@
   --header-h: 72px;
 
   /* Shape */
-  --r-panel: 12px;
-  --r-button: 8px;
+  /* Premium pass: soft, generous rounding; buttons are pills. */
+  --r-panel: 20px;
+  --r-stage: clamp(24px, 2vw + 12px, 40px);
+  --r-button: 999px;
   --r-pill: 999px;
 
   /* Depth: offset + soft blur, ink-tinted */
-  --shadow-1: 0 1px 2px rgb(11 31 77 / 0.06), 0 4px 12px rgb(11 31 77 / 0.05);
-  --shadow-2: 0 2px 4px rgb(11 31 77 / 0.06), 0 16px 40px rgb(11 31 77 / 0.1);
+  --shadow-1: 0 2px 6px rgb(11 31 77 / 0.04), 0 12px 32px rgb(11 31 77 / 0.07);
+  --shadow-2: 0 4px 10px rgb(11 31 77 / 0.06), 0 24px 56px rgb(11 31 77 / 0.12);
+
+  /* Stage panels: the saturated rounded fields that carry key sections. */
+  --stage-purple: linear-gradient(135deg, #6b2fa6, #92278f 55%, #b02a8e);
+  --stage-blue: linear-gradient(135deg, #0b3f9c, #1f5fc4 60%, #27aae1);
+  --stage-magenta: linear-gradient(135deg, #b3005f, #c4006f 45%, #8a2387);
+  --accent: var(--action);
 
   /* Motion */
   --ease-snap: cubic-bezier(0.25, 1, 0.5, 1);

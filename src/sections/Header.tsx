@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { nav, headerCta } from '../content'
 import { Button } from '../components/ui'
+import logo from '../assets/teia-logo.png'
+import logoBranca from '../assets/teia-logo-branca.png'
 import './Header.css'
 
 export function Wordmark({ inverse = false }: { inverse?: boolean }) {
   return (
     <a href="#top" className={`wordmark ${inverse ? 'wordmark--inverse' : ''}`} aria-label="Teia de Saberes, início">
-      <span className="wordmark__name">Teia de Saberes</span>
+      <img className="wordmark__logo" src={inverse ? logoBranca : logo} alt="" width={283} height={120} />
     </a>
   )
 }
