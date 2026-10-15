@@ -178,7 +178,7 @@ export const author = {
 export const video = {
   heading: 'Conheça a formação por dentro.',
   // rel=0 keeps end-screen suggestions to this channel.
-  src: 'https://www.youtube.com/embed/32yt_vrxjFU?rel=0',
+  src: 'https://www.youtube.com/embed/Y4YvfLX0ai8?rel=0',
   // Our own cover hides YouTube's title/channel bar until someone presses play.
   poster: videoCapa,
   title: 'Vídeo de apresentação do Caminhos da Inclusão',
