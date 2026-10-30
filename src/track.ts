@@ -24,7 +24,8 @@ export function initTracking() {
     w.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' })
     load(`https://www.googletagmanager.com/gtm.js?id=${encodeURIComponent(GTM_ID)}`)
   }
-  if (META_PIXEL_ID) {
+  // Skip when index.html already installed the pixel, so PageView isn't sent twice.
+  if (META_PIXEL_ID && !w.fbq) {
     // Meta's official stub: queues calls until fbevents.js installs callMethod.
     type Stub = ((...a: unknown[]) => void) & { callMethod?: (...a: unknown[]) => void; queue: unknown[]; push: Stub; loaded: boolean; version: string }
     const fbq = function (...a: unknown[]) {
